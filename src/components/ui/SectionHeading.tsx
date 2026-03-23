@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
-import gsap from 'gsap';
 
 interface SectionHeadingProps {
   title: ReactNode;
@@ -15,26 +14,28 @@ const SectionHeading = ({ title, subtitle, badge, align = 'center', className = 
   const alignment = align === 'center' ? 'text-center mx-auto items-center' : 'text-left items-start';
   
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Create a smooth upward fade for all section headings
-      gsap.fromTo('.heading-element',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Use IntersectionObserver — completely independent of GSAP, cannot be killed
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const elements = container.querySelectorAll<HTMLElement>('.heading-element');
+            elements.forEach((el, i) => {
+              el.style.transitionDelay = `${i * 0.15}s`;
+              el.classList.add('heading-element--visible');
+            });
+            observer.disconnect();
           }
-        }
-      );
-    }, containerRef);
-    
-    return () => ctx.revert();
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -52,6 +53,18 @@ const SectionHeading = ({ title, subtitle, badge, align = 'center', className = 
           {subtitle}
         </p>
       )}
+
+      <style>{`
+        .heading-element {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .heading-element--visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </div>
   );
 };
