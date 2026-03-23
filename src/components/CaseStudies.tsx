@@ -8,7 +8,9 @@ import Card from './ui/Card';
 import BeforeAfterSlider from './ui/BeforeAfterSlider';
 import { Clock, TrendingDown, Building2, CheckCircle } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const projects = [
   {

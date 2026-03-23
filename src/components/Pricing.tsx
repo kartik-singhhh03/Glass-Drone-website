@@ -7,7 +7,9 @@ import SectionHeading from './ui/SectionHeading';
 import Card from './ui/Card';
 import Button from './ui/Button';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const pricingFactors = [
   { 

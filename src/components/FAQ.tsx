@@ -5,7 +5,9 @@ import { Plus, Minus } from 'lucide-react';
 import SectionWrapper from './ui/SectionWrapper';
 import SectionHeading from './ui/SectionHeading';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const faqs = [
   {

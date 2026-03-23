@@ -3,7 +3,9 @@ import { Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowRight } from 'l
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);

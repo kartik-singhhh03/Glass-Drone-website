@@ -4,7 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Play } from 'lucide-react';
 import Button from './ui/Button';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);

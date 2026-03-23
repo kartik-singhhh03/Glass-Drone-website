@@ -4,7 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import SectionHeading from './ui/SectionHeading';
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+}
 
 const steps = [
   {
@@ -38,32 +40,39 @@ const HowItWorks = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+    if (typeof window === 'undefined') return;
 
+    const ctx = gsap.context(() => {
       // Continuous Drone Floating Timeline: Soft -5px to +5px float
-      gsap.set(".drone-anim-layer", { y: 5 });
-      gsap.to(".drone-anim-layer", {
-        y: -5,
-        yoyo: true,
-        repeat: -1,
-        duration: 1.5,
-        ease: "sine.inOut"
-      });
+      if (document.querySelector('.drone-anim-layer')) {
+        gsap.set('.drone-anim-layer', { y: 5 });
+        gsap.to('.drone-anim-layer', {
+          y: -5,
+          yoyo: true,
+          repeat: -1,
+          duration: 1.5,
+          ease: 'sine.inOut'
+        });
+      }
 
       // ---- DESKTOP (MotionPath SVG Timeline) ----
       if (window.innerWidth >= 1024) {
-        gsap.set("#drone-wrapper", { autoAlpha: 1 });
+        const droneWrapper = document.querySelector('#drone-wrapper');
+        const path = document.querySelector('#active-path') as SVGPathElement | null;
 
-        const path = document.querySelector("#active-path") as SVGPathElement;
+        // CRITICAL: null-guard — if either element is missing, skip desktop animation
+        if (!droneWrapper || !path) return;
+
+        gsap.set(droneWrapper, { autoAlpha: 1 });
+
         const length = path.getTotalLength();
         gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
 
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: ".desktop-container",
-            start: "center center", 
-            end: "+=2000",
+            trigger: '.desktop-container',
+            start: 'center center',
+            end: '+=2000',
             scrub: true,
             pin: true,
             anticipatePin: 1,
@@ -77,32 +86,32 @@ const HowItWorks = () => {
           }
         });
 
-        // The line visually reveals natively tracking directly underneath the Drone engine
         tl.to(path, {
           strokeDashoffset: 0,
           duration: 1,
-          ease: "none"
+          ease: 'none'
         }, 0);
 
-        tl.to("#drone-wrapper", {
+        tl.to('#drone-wrapper', {
           motionPath: {
-            path: "#flight-path",
-            align: "#flight-path",
+            path: '#flight-path',
+            align: '#flight-path',
             alignOrigin: [0.5, 0.5],
             autoRotate: true,
           },
           duration: 1,
-          ease: "none"
+          ease: 'none'
         }, 0);
-        
-      } 
-      // ---- MOBILE / TABLET (Vertical Linear Timeline) ----
-      else {
+
+      } else {
+        // ---- MOBILE / TABLET (Vertical Linear Timeline) ----
+        if (!document.querySelector('.mobile-container')) return;
+
         const tlMobile = gsap.timeline({
           scrollTrigger: {
-            trigger: ".mobile-container",
-            start: "top 40%", // Waits cleanly until explicitly in-viewport
-            end: "bottom 85%", 
+            trigger: '.mobile-container',
+            start: 'top 40%',
+            end: 'bottom 85%',
             scrub: 1,
             onUpdate: (self) => {
               const p = self.progress;
@@ -114,17 +123,14 @@ const HowItWorks = () => {
           }
         });
 
-        tlMobile.to(".mobile-active-line", {
-           height: "100%",
-           ease: "none"
+        tlMobile.to('.mobile-active-line', {
+          height: '100%',
+          ease: 'none'
         }, 0);
       }
     }, sectionRef);
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (

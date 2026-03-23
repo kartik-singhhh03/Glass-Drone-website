@@ -6,7 +6,9 @@ import SectionWrapper from './ui/SectionWrapper';
 import SectionHeading from './ui/SectionHeading';
 import Card from './ui/Card';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const clients = [
   { icon: <Building2 className="w-10 h-10 text-white" />, title: 'Office Buildings' },
