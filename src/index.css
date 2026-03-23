@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-blue-accent: #00ACCE;
+  --color-dark: #231F20;
+  --color-light: #F7F7F7;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply antialiased text-dark bg-white font-sans;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ::selection {
+    background-color: rgba(0, 172, 206, 0.15); /* blue-accent/15 */
+    color: #00ACCE;
+  }
+}
+
+@utility subtle-shadow {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+}
