@@ -43,25 +43,29 @@ const FAQ = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo('.faq-item', 
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
+    if (typeof window !== "undefined") {
+      if (!document.querySelector('.faq-item')) return;
+      
+      const ctx = gsap.context(() => {
+        gsap.fromTo('.faq-item', 
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
           }
-        }
-      );
-    }, containerRef);
-    
-    return () => ctx.revert();
+        );
+      }, containerRef);
+      
+      return () => ctx.revert();
+    }
   }, []);
 
   return (

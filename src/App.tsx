@@ -21,28 +21,32 @@ function App() {
     if (typeof window !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
       
-      // Initialize Lenis for premium smooth scrolling
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
+      const ctx = gsap.context(() => {
+        // Initialize Lenis for premium smooth scrolling
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          wheelMultiplier: 1,
+          touchMultiplier: 2,
+        });
+        
+        lenis.on('scroll', ScrollTrigger.update);
+        
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        
+        gsap.ticker.lagSmoothing(0);
+        
+        return () => {
+          ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+          lenis.destroy();
+        };
       });
-      
-      lenis.on('scroll', ScrollTrigger.update);
-      
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-      
-      gsap.ticker.lagSmoothing(0);
-      
-      return () => {
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        lenis.destroy();
-      };
+
+      return () => ctx.revert();
     }
   }, []);
 

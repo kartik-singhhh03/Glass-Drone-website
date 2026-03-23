@@ -53,6 +53,9 @@ const Services = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!document.querySelector('.service-card')) return;
+
     let ctx: gsap.Context;
 
     // rAF ensures DOM is fully painted before GSAP measures positions

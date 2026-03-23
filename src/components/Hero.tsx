@@ -16,98 +16,107 @@ const Hero = () => {
   const ripple3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Premium Text fade-in upward animation
-      gsap.from('.hero-text-element', {
-        y: 40,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.1,
-        ease: 'power3.out',
-        delay: 0.2
-      });
+    if (typeof window !== "undefined") {
+      if (!document.querySelector('.hero-text-element')) return;
 
-      // Buttons animation
-      gsap.from('.hero-btn-element', {
-        y: 30,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.1,
-        ease: 'power3.out',
-        delay: 0.6
-      });
-
-      // Subtle parallax effect on background pattern
-      gsap.to('.hero-bg-pattern', {
-        y: '8%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        }
-      });
-
-      // Premium Drone entry animation
-      gsap.fromTo(droneWrapperRef.current,
-        {
-          x: 150,
-          y: 20,
-          scale: 0.9,
+      const ctx = gsap.context(() => {
+        // Premium Text fade-in upward animation
+        gsap.from('.hero-text-element', {
+          y: 40,
           opacity: 0,
-        },
-        {
-          x: 0,
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 2.2,
-          ease: 'power4.out',
-          delay: 0.3,
-          onComplete: () => {
-            // Floating effect
-            gsap.to(droneRef.current, {
-              y: '-=15', // Float upward smoothly
-              duration: 3.5,
-              ease: 'sine.inOut',
-              yoyo: true,
-              repeat: -1,
-            });
+          duration: 1.2,
+          stagger: 0.1,
+          ease: 'power3.out',
+          delay: 0.2
+        });
 
-            // Shadow animation synced perfectly with float
-            gsap.to(shadowRef.current, {
-              scale: 0.85,
-              opacity: 0.5,
-              duration: 3.5,
-              ease: 'sine.inOut',
-              yoyo: true,
-              repeat: -1,
-            });
-          }
+        // Buttons animation
+        gsap.from('.hero-btn-element', {
+          y: 30,
+          opacity: 0,
+          duration: 1.2,
+          stagger: 0.1,
+          ease: 'power3.out',
+          delay: 0.6
+        });
+
+        // Subtle parallax effect on background pattern
+        if (document.querySelector('.hero-bg-pattern')) {
+          gsap.to('.hero-bg-pattern', {
+            y: '8%',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            }
+          });
         }
-      );
 
-      // Fine-tuned Vibration Ripple Effects (Softer intensity on mobile)
-      const ripples = [ripple1Ref.current, ripple2Ref.current, ripple3Ref.current];
+        // Premium Drone entry animation
+        if (droneWrapperRef.current && droneRef.current && shadowRef.current) {
+          gsap.fromTo(droneWrapperRef.current,
+            {
+              x: 150,
+              y: 20,
+              scale: 0.9,
+              opacity: 0,
+            },
+            {
+              x: 0,
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              duration: 2.2,
+              ease: 'power4.out',
+              delay: 0.3,
+              onComplete: () => {
+                // Floating effect
+                gsap.to(droneRef.current, {
+                  y: '-=15', // Float upward smoothly
+                  duration: 3.5,
+                  ease: 'sine.inOut',
+                  yoyo: true,
+                  repeat: -1,
+                });
+
+                // Shadow animation synced perfectly with float
+                gsap.to(shadowRef.current, {
+                  scale: 0.85,
+                  opacity: 0.5,
+                  duration: 3.5,
+                  ease: 'sine.inOut',
+                  yoyo: true,
+                  repeat: -1,
+                });
+              }
+            }
+          );
+        }
+
+        // Fine-tuned Vibration Ripple Effects (Softer intensity on mobile)
+        const ripples = [ripple1Ref.current, ripple2Ref.current, ripple3Ref.current];
+        
+        ripples.forEach((ripple, index) => {
+          if (!ripple) return;
+          gsap.fromTo(ripple,
+            { scale: 0.8, opacity: 0.4 },
+            {
+              scale: 1.6,
+              opacity: 0,
+              duration: 3.5,
+              ease: 'power1.out',
+              repeat: -1,
+              delay: index * 1.0
+            }
+          );
+        });
+
+      }, containerRef);
       
-      ripples.forEach((ripple, index) => {
-        gsap.fromTo(ripple,
-          { scale: 0.8, opacity: 0.4 },
-          {
-            scale: 1.6,
-            opacity: 0,
-            duration: 3.5,
-            ease: 'power1.out',
-            repeat: -1,
-            delay: index * 1.0
-          }
-        );
-      });
-
-    }, containerRef);
-    
-    return () => ctx.revert();
+      return () => ctx.revert();
+    }
   }, []);
 
   return (

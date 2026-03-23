@@ -37,43 +37,47 @@ const CaseStudies = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Image reveal using clip-path
-      gsap.utils.toArray('.clip-reveal-container').forEach((container: any) => {
-        gsap.fromTo(container, 
-          { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' },
-          {
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-            duration: 1.5,
-            ease: 'power3.inOut',
-            scrollTrigger: {
-              trigger: container,
-              start: 'top 85%',
+    if (typeof window !== "undefined") {
+      if (!document.querySelector('.clip-reveal-container')) return;
+
+      const ctx = gsap.context(() => {
+        // Image reveal using clip-path
+        gsap.utils.toArray('.clip-reveal-container').forEach((container: any) => {
+          gsap.fromTo(container, 
+            { clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' },
+            {
+              clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+              duration: 1.5,
+              ease: 'power3.inOut',
+              scrollTrigger: {
+                trigger: container,
+                start: 'top 85%',
+              }
             }
-          }
-        );
-      });
+          );
+        });
+        
+        // Content reveal staggered
+        gsap.utils.toArray('.project-content').forEach((content: any) => {
+          gsap.fromTo(content,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: 'power2.out',
+              delay: 0.3,
+              scrollTrigger: {
+                trigger: content,
+                start: 'top 85%',
+              }
+            }
+          );
+        });
+      }, sectionRef);
       
-      // Content reveal staggered
-      gsap.utils.toArray('.project-content').forEach((content: any) => {
-        gsap.fromTo(content,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: 'power2.out',
-            delay: 0.3,
-            scrollTrigger: {
-              trigger: content,
-              start: 'top 85%',
-            }
-          }
-        );
-      });
-    }, sectionRef);
-    
-    return () => ctx.revert();
+      return () => ctx.revert();
+    }
   }, []);
 
   return (

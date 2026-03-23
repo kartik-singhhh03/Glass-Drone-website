@@ -9,24 +9,28 @@ const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Sophisticated stagger fade-in bounding strictly to power3 for premium smoothness
-      gsap.fromTo(".footer-elem",
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 85%"
+    if (typeof window !== "undefined") {
+      if (!document.querySelector('.footer-elem')) return;
+
+      let ctx = gsap.context(() => {
+        // Sophisticated stagger fade-in bounding strictly to power3 for premium smoothness
+        gsap.fromTo(".footer-elem",
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: footerRef.current,
+              start: "top 85%"
+            }
           }
-        }
-      );
-    }, footerRef);
-    return () => ctx.revert();
+        );
+      }, footerRef);
+      return () => ctx.revert();
+    }
   }, []);
 
   return (

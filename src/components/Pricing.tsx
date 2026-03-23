@@ -46,26 +46,30 @@ const Pricing = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo('.pricing-card', 
-        { opacity: 0, scale: 0.9, y: 30 },
-        {
-          opacity: 1, 
-          scale: 1,
-          y: 0, 
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+    if (typeof window !== "undefined") {
+      if (!document.querySelector('.pricing-card')) return;
+      
+      const ctx = gsap.context(() => {
+        gsap.fromTo('.pricing-card', 
+          { opacity: 0, scale: 0.9, y: 30 },
+          {
+            opacity: 1, 
+            scale: 1,
+            y: 0, 
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse'
+            }
           }
-        }
-      );
-    }, containerRef);
-    
-    return () => ctx.revert();
+        );
+      }, containerRef);
+      
+      return () => ctx.revert();
+    }
   }, []);
 
   return (

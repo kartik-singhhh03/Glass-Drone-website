@@ -47,42 +47,48 @@ const Safety = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Fade-in staggered animation for icons/cards
-      gsap.fromTo('.safety-item', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
+    if (typeof window !== "undefined") {
+      if (!document.querySelector('.safety-item')) return;
       
-      // Trust badges fade-in
-      gsap.fromTo('.trust-badge', 
-        { opacity: 0, scale: 0.9 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: 'back.out(1.5)',
-          scrollTrigger: {
-            trigger: '.badges-container',
-            start: 'top 90%',
+      const ctx = gsap.context(() => {
+        // Fade-in staggered animation for icons/cards
+        gsap.fromTo('.safety-item', 
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse'
+            }
           }
+        );
+        
+        // Trust badges fade-in
+        if (document.querySelector('.trust-badge')) {
+          gsap.fromTo('.trust-badge', 
+            { opacity: 0, scale: 0.9 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.5,
+              stagger: 0.1,
+              ease: 'back.out(1.5)',
+              scrollTrigger: {
+                trigger: '.badges-container',
+                start: 'top 90%',
+              }
+            }
+          );
         }
-      );
-    }, containerRef);
-    
-    return () => ctx.revert();
+      }, containerRef);
+      
+      return () => ctx.revert();
+    }
   }, []);
 
   return (
