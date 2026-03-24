@@ -1,82 +1,176 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Building2, Landmark, Store, Home, Factory, Hexagon } from 'lucide-react';
-import SectionWrapper from './ui/SectionWrapper';
+import { useState, useEffect, useRef } from 'react';
 import SectionHeading from './ui/SectionHeading';
-import Card from './ui/Card';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const clients = [
-  { icon: <Building2 className="w-10 h-10 text-white" />, title: 'Office Buildings' },
-  { icon: <Landmark className="w-10 h-10 text-white" />, title: 'Hotels & Resorts' },
-  { icon: <Store className="w-10 h-10 text-white" />, title: 'Shopping Centers' },
-  { icon: <Home className="w-10 h-10 text-white" />, title: 'Residential Complexes' },
-  { icon: <Factory className="w-10 h-10 text-white" />, title: 'Industrial Facilities' },
-  { icon: <Hexagon className="w-10 h-10 text-white" />, title: 'Modern Glass Structures' }
+  // COL 1
+  {
+    title: 'Office Buildings',
+    description: 'High-rise and corporate spaces cleaned efficiently with zero disruption.',
+    image: '/Office Buildings.png',
+    heightClass: 'md:h-[480px] h-[360px]',
+    delay: 0,
+    col: 1
+  },
+  {
+    title: 'Residential Complexes',
+    description: 'Quiet and precise operation for premium residential environments.',
+    image: '/Residential Complexes.png',
+    heightClass: 'md:h-[340px] h-[360px]',
+    delay: 0.3,
+    col: 1
+  },
+  // COL 2
+  {
+    title: 'Hotels & Resorts',
+    description: 'Elevate guest experiences with pristine glass and spotless facades.',
+    image: '/Hotels & Resorts.png',
+    heightClass: 'md:h-[340px] h-[360px]',
+    delay: 0.1,
+    col: 2
+  },
+  {
+    title: 'Industrial Facilities',
+    description: 'Safely tackle enormous surfaces and complex engineering challenges.',
+    image: '/Industrial Facilities.png',
+    heightClass: 'md:h-[480px] h-[360px]',
+    delay: 0.4,
+    col: 2
+  },
+  // COL 3
+  {
+    title: 'Shopping Centers',
+    description: 'Maintain crystal-clear storefronts ensuring brilliant retail visibility.',
+    image: '/Shopping Centers.png',
+    heightClass: 'md:h-[420px] h-[360px]',
+    delay: 0.2,
+    col: 3
+  },
+  {
+    title: 'Modern Glass Structures',
+    description: 'Specialized soft-wash drone care for delicate architectural glass.',
+    image: '/Modern Glass Structures.png',
+    heightClass: 'md:h-[400px] h-[360px]',
+    delay: 0.5,
+    col: 3
+  }
 ];
 
 const TargetClients = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (!document.querySelector('.client-card')) return;
-      
-      const ctx = gsap.context(() => {
-        gsap.fromTo('.client-card', 
-          { opacity: 0, scale: 0.95, y: 30 },
-          {
-            opacity: 1, 
-            scale: 1,
-            y: 0, 
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      }, containerRef);
-      
-      return () => ctx.revert();
-    }
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
   }, []);
 
-  return (
-    <SectionWrapper id="clients" bg="light" className="border-t border-gray-100">
-      <div ref={containerRef} className="max-w-7xl mx-auto">
-        <SectionHeading 
-          badge="Global Reach"
-          title="Who We Serve"
-          subtitle="Engineered to adapt across any industry, our autonomous cleaning systems guarantee rapid deployment and spot-free finishes."
+  const col1 = clients.filter(c => c.col === 1);
+  const col2 = clients.filter(c => c.col === 2);
+  const col3 = clients.filter(c => c.col === 3);
+  
+  // Sorted for mobile single column
+  const mobileClients = [...clients].sort((a, b) => a.delay - b.delay);
+
+  const renderCard = (client: typeof clients[0]) => (
+    <div 
+      key={client.title}
+      className="w-full"
+      style={{
+        opacity: 0,
+        animation: isVisible ? `fadeRise 0.8s ease forwards ${client.delay}s` : 'none',
+      }}
+    >
+      <div className={`target-card relative w-full rounded-[24px] overflow-hidden bg-white cursor-crosshair group ${client.heightClass}`}>
+        <img 
+          src={encodeURI(client.image)} 
+          alt={client.title}
+          onError={(e) => { e.currentTarget.src = "/commercial.png"; }}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {clients.map((client, index) => (
-            <Card 
-              key={index} 
-              padding="md" 
-              hover 
-              className="client-card flex items-center gap-6 group bg-white border border-gray-100"
-            >
-              <div className="w-20 h-20 rounded-[1.25rem] bg-dark flex flex-shrink-0 items-center justify-center shadow-lg group-hover:bg-blue-accent group-hover:shadow-blue-accent/30 transition-all duration-300 transform group-hover:scale-105 group-hover:-rotate-3">
-                {client.icon}
-              </div>
-              <h3 className="text-xl font-bold text-dark group-hover:text-blue-accent transition-colors duration-300 leading-tight">
-                {client.title}
-              </h3>
-            </Card>
-          ))}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0) 40%, rgba(255,255,255,0.85) 70%, rgba(255,255,255,1) 100%)'
+          }}
+        />
+        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 pointer-events-none z-10">
+          <h3 className="text-[22px] md:text-[24px] font-bold text-[#0f172a] mb-2 leading-tight">
+            {client.title}
+          </h3>
+          <p className="text-[15px] font-medium text-[#64748b] leading-relaxed">
+            {client.description}
+          </p>
         </div>
       </div>
-    </SectionWrapper>
+    </div>
+  );
+
+  return (
+    <section 
+      id="clients" 
+      className="relative overflow-hidden py-24 sm:py-32" 
+      style={{ background: 'linear-gradient(to bottom, #F8F8FF, #EEF4FF)' }}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div ref={containerRef}>
+          <SectionHeading
+            badge="Global Reach"
+            title="Who We Serve"
+            subtitle="Engineered to adapt across any industry, our autonomous cleaning systems guarantee rapid deployment and spot-free finishes."
+          />
+        </div>
+
+        <div className="mt-16 sm:mt-24 w-full">
+          {/* Mobile Layout (Standard single column stack) */}
+          <div className="flex md:hidden flex-col gap-6">
+            {mobileClients.map(renderCard)}
+          </div>
+
+          {/* Desktop Layout (3-Column Asymmetric Masonry) */}
+          <div className="hidden md:flex flex-row gap-6 lg:gap-8 justify-between">
+            <div className="flex flex-col gap-6 lg:gap-8 flex-1">
+              {col1.map(renderCard)}
+            </div>
+            <div className="flex flex-col gap-6 lg:gap-8 flex-1">
+              {col2.map(renderCard)}
+            </div>
+            <div className="flex flex-col gap-6 lg:gap-8 flex-1">
+              {col3.map(renderCard)}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes fadeRise {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .target-card {
+          box-shadow: 0 10px 30px rgba(0,0,0,0.06), 0 20px 60px rgba(0,0,0,0.08);
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .target-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 25px 80px rgba(0,0,0,0.12);
+        }
+      `}</style>
+    </section>
   );
 };
 
