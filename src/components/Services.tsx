@@ -14,7 +14,7 @@ const services = [
     description:
       'Clean impossibly tall buildings efficiently without the risk of costly scaffolding or dangling workers. Our autonomous drone fleet handles every floor with precision.',
     benefit: 'Reduce traditional cleaning time by up to 60%',
-    image: '/commercial.png',
+    image: '/HIGH-RISE CLEANING.png',
     tag: 'Service 01',
   },
   {
@@ -22,7 +22,7 @@ const services = [
     description:
       'Maintain pristine, streak-free building exteriors utilizing advanced precision spraying technology. Each pass is calibrated for optical clarity and material safety.',
     benefit: 'Improve building value and occupant experience',
-    image: '/residential.png',
+    image: '/GLASS FAÇADE MAINTENANCE.png',
     tag: 'Service 02',
   },
   {
@@ -30,7 +30,7 @@ const services = [
     description:
       'Effortlessly clean architectural features, curves, and overhangs inaccessible by traditional crane baskets. Drones navigate complex geometry seamlessly.',
     benefit: 'Zero manual risk or expensive mechanical lifts',
-    image: '/specialty.png',
+    image: '/HARD-TO-REACH SURFACES.png',
     tag: 'Service 03',
   },
   {
@@ -38,7 +38,7 @@ const services = [
     description:
       'Automated, regular cleaning flight paths ensuring your building maintains a flawless look year-round. Set it once — our system handles the rest.',
     benefit: 'Consistent, budgetable property management',
-    image: '/d-4.jpg',
+    image: '/SCHEDULED MAINTENANCE.png',
     tag: 'Service 04',
   },
   {
