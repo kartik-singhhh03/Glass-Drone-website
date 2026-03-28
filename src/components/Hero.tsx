@@ -99,7 +99,7 @@ const Hero = () => {
 
         // Fine-tuned Vibration Ripple Effects (Softer intensity on mobile)
         const ripples = [ripple1Ref.current, ripple2Ref.current, ripple3Ref.current];
-        
+
         ripples.forEach((ripple, index) => {
           if (!ripple) return;
           gsap.fromTo(ripple,
@@ -116,47 +116,47 @@ const Hero = () => {
         });
 
       }, containerRef);
-      
+
       return () => ctx.revert();
     }
   }, []);
 
   return (
-    <section 
-      ref={containerRef} 
+    <section
+      ref={containerRef}
       className="relative w-full overflow-hidden bg-[#F8F8FF] z-10 pt-[100px] md:pt-[120px] lg:pt-[160px] pb-[100px] md:pb-[120px] lg:pb-[140px]"
     >
       {/* --- BACKGROUND LAYERS --- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Layer 1: Base Realistic Image on Left */}
-        <div 
+        <div
           className="absolute top-0 left-0 w-[100%] md:w-[80%] lg:w-[65%] h-full opacity-35 mix-blend-luminosity"
-          style={{ 
-            backgroundImage: "url('/hero_drone.png')", 
-            backgroundSize: 'cover', 
+          style={{
+            backgroundImage: "url('/hero_drone.png')",
+            backgroundSize: 'cover',
             backgroundPosition: 'left center',
           }}
         ></div>
-        
+
         {/* Layer 2: Gradient fading to base color towards Center/Right */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#F8F8FF]/30 via-[#F8F8FF]/80 to-[#F8F8FF]"></div>
-        
+
         {/* Layer 3: Soft blur filter for smooth photo transition */}
         <div className="absolute inset-0 backdrop-blur-[2px]"></div>
 
         {/* Subtle Background Pattern */}
-        <div className="hero-bg-pattern absolute inset-0 opacity-[0.03]" 
-             style={{ backgroundImage: 'radial-gradient(black 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+        <div className="hero-bg-pattern absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: 'radial-gradient(black 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
         </div>
       </div>
 
       {/* --- FOREGROUND CONTENT --- */}
       <div className="relative z-10 max-w-[1280px] w-full mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-4 lg:gap-8 items-center lg:items-start min-h-[70vh] lg:min-h-[600px]">
-        
+
         {/* Left Side: Text Content */}
         {/* Mobile: Order 2 (Below Drone). Tablet/Desktop: Order 1 */}
         <div className="md:col-span-6 lg:col-span-7 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 relative z-20 w-full max-w-[700px] mx-auto lg:mx-0">
-          
+
           <h1 className="hero-text-element text-[34px] sm:text-[42px] md:text-[40px] lg:text-[60px] font-semibold tracking-tight text-slate-900 mb-5 leading-[1.12]">
             Drone Window Cleaning for <span className="text-blue-accent whitespace-nowrap">High-Rise</span> Buildings
           </h1>
@@ -166,7 +166,7 @@ const Hero = () => {
           </p>
 
           <div className="hero-text-element hidden sm:block w-8 h-[2px] bg-blue-accent/30 mb-5"></div>
-          
+
           <p className="hero-text-element text-[11px] sm:text-[12px] md:text-[10px] lg:text-[12px] text-slate-500 font-medium tracking-wider uppercase leading-relaxed w-full max-w-[500px]">
             Serving residential, commercial, and government buildings across Estonia, expanding to Baltics and Scandinavia.
           </p>
@@ -189,16 +189,16 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          
+
         </div>
 
         {/* Right Side: Drone Area */}
         {/* Mobile: Order 1 (Above Text). Tablet/Desktop: Order 2 */}
         <div className="md:col-span-6 lg:col-span-5 relative order-1 md:order-2 flex items-center justify-center w-full mt-4 lg:mt-0 mb-4 lg:mb-0">
-          
+
           {/* Enhanced Radial Glow behind drone */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-             <div className="absolute w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-[rgba(0,172,206,0.15)] blur-[50px]"></div>
+            <div className="absolute w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-[rgba(0,172,206,0.15)] blur-[50px]"></div>
           </div>
 
           {/* Visibility-improved Ripple Circles */}
@@ -211,18 +211,18 @@ const Hero = () => {
           {/* Drone and Shadow */}
           <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-[260px] sm:max-w-[350px] lg:max-w-[600px] mx-auto">
             <div ref={droneWrapperRef} className="relative w-full px-2 lg:px-0">
-              <img 
+              <img
                 ref={droneRef}
-                src="/d-2.png" 
-                alt="Glass Cleaning Drone" 
+                src="/d-2.png"
+                alt="Glass Cleaning Drone"
                 className="w-full h-auto object-contain relative drop-shadow-2xl"
               />
             </div>
-            
+
             {/* Soft Shadow */}
             <div ref={shadowRef} className="mt-6 sm:mt-12 relative flex justify-center items-center w-full h-[15px]">
-               <div className="absolute w-[100px] sm:w-[150px] lg:w-[200px] h-[4px] sm:h-[6px] bg-black/15 blur-[4px] rounded-[100%]"></div>
-               <div className="absolute w-[160px] sm:w-[240px] lg:w-[320px] h-[10px] sm:h-[14px] bg-black/10 blur-[12px] rounded-[100%]"></div>
+              <div className="absolute w-[100px] sm:w-[150px] lg:w-[200px] h-[4px] sm:h-[6px] bg-black/15 blur-[4px] rounded-[100%]"></div>
+              <div className="absolute w-[160px] sm:w-[240px] lg:w-[320px] h-[10px] sm:h-[14px] bg-black/10 blur-[12px] rounded-[100%]"></div>
             </div>
           </div>
 
@@ -232,10 +232,10 @@ const Hero = () => {
       {/* --- HERO BOTTOM CURVE (SVG Option 1) --- */}
       {/* Ensures it stays at exactly the bottom, overlapping the section's extra pb-[100px] clear space */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-0 pointer-events-none">
-        <svg 
-          viewBox="0 0 1440 120" 
-          preserveAspectRatio="none" 
-          className="w-full h-[40px] md:h-[80px] lg:h-[120px] block transform translate-y-[1px]" 
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="w-full h-[40px] md:h-[80px] lg:h-[120px] block transform translate-y-[1px]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M0,120 L0,0 C360,100 1080,100 1440,0 L1440,120 Z" fill="#ffffff" />

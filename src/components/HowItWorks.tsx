@@ -11,19 +11,19 @@ if (typeof window !== 'undefined') {
 const steps = [
   {
     title: 'Building Assessment',
-    description: 'We utilize satellite mapping and site visits to accurately plot dimensions and logistics.'
+    description: 'We utilise satellite mapping and site visits to accurately plot dimensions and logistics.'
   },
   {
     title: 'Cleaning Plan',
-    description: 'Engineering precise drone flight paths and establishing strict ground perimeters.'
+    description: 'Engineering precise drone flight paths and establishing strict ground perimeters in line with PDRA-S01 requirements.'
   },
   {
     title: 'Drone Cleaning',
-    description: 'Robotic fleet deploys high-pressure mist and soft brushes to wash facades autonomously.'
+    description: 'The C20 drone is piloted by a certified remote pilot (RPIC) in full visual line of sight, applying high-pressure mist to wash façades safely.'
   },
   {
     title: 'Results Delivery',
-    description: 'Total documentation, high-res before/after imaging, and scheduled routings.'
+    description: 'Total documentation, high-res before/after imaging, and scheduling of future maintenance routines.'
   }
 ];
 
@@ -38,7 +38,7 @@ const desktopNodes = [
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -136,13 +136,13 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" ref={sectionRef} className="bg-white relative pt-[60px] md:pt-[80px] pb-16 md:pb-24 overflow-hidden z-10 w-full">
       <div className="max-w-[1240px] mx-auto px-6 w-full">
-        
+
         {/* Title Block isolated cleanly to seamlessly scroll past as the container pins */}
         <div className="w-full text-center max-w-[800px] mx-auto mb-12 flex-shrink-0">
-          <SectionHeading 
+          <SectionHeading
             badge="Seamless Process"
-            title="How It Works" 
-            subtitle="A flawlessly streamlined 4-step autonomous cleaning protocol tailored to your architecture."
+            title="How It Works"
+            subtitle="A professionally managed 4-step piloted drone cleaning process tailored to your architecture."
             className="mb-0 mx-auto"
           />
         </div>
@@ -151,7 +151,7 @@ const HowItWorks = () => {
         {/* DESKTOP SVG MOTION-PATH LAYOUT             */}
         {/* ========================================= */}
         <div className="desktop-container relative w-full max-w-[1000px] h-[500px] mx-auto hidden lg:block select-none pointer-events-none mt-4">
-          
+
           {/* SVG Background Path Curves */}
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 400" preserveAspectRatio="none">
             {/* Faded Background Track */}
@@ -164,7 +164,7 @@ const HowItWorks = () => {
           <div id="drone-wrapper" className="absolute top-0 left-0 w-[90px] h-[90px] z-30 opacity-0 center origin-center">
             {/* Inner Floating Engine with totally naked transparent PNG representation */}
             <div className="drone-anim-layer w-full h-full relative group">
-              <img src="/d-3.png" alt="Drone Path Tracker" className="w-full h-full object-contain relative z-10 scale-110 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
+              <img src="/d-2.png" alt="Drone Path Tracker" className="w-full h-full object-contain relative z-10 scale-110 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
             </div>
           </div>
 
@@ -186,7 +186,7 @@ const HowItWorks = () => {
                     {i + 1}
                   </div>
                 </div>
-                
+
                 {/* Absolute Floating Content Box isolated gracefully above and below the line */}
                 <div className={`absolute ${node.posOpts} ${node.textAlign} transition-all duration-700 pointer-events-none 
                     ${isPassed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
@@ -202,19 +202,19 @@ const HowItWorks = () => {
         {/* MOBILE / TABLET VERTICAL SCRUB LAYOUT     */}
         {/* ========================================= */}
         <div className="mobile-container relative w-full lg:hidden flex flex-col gap-[50px] pl-[50px] py-10 mx-auto max-w-[500px]">
-          
+
           {/* Vertical Track Rail */}
           <div className="absolute top-10 bottom-16 left-[28px] w-1.5 bg-gray-100 rounded-full overflow-hidden">
-             <div className="mobile-active-line w-full bg-blue-accent relative rounded-full" style={{height: 0}}>
-                {/* Dynamically Pinned Mobile Drone Tracker! Fixed 60x60px constraint */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[60px] h-[60px] z-30 pointer-events-none">
-                  <div className="drone-anim-layer w-full h-full relative">
-                    <img src="/d-3.png" alt="Drone Scrubber" className="w-full h-full object-contain rotate-90 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
-                  </div>
+            <div className="mobile-active-line w-full bg-blue-accent relative rounded-full" style={{ height: 0 }}>
+              {/* Dynamically Pinned Mobile Drone Tracker! Fixed 60x60px constraint */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[60px] h-[60px] z-30 pointer-events-none">
+                <div className="drone-anim-layer w-full h-full relative">
+                  <img src="/d-3.png" alt="Drone Scrubber" className="w-full h-full object-contain rotate-90 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
-          
+
           {/* Mobile Text Blocks */}
           {steps.map((step, i) => {
             const isPassed = activeStep >= i;
@@ -232,7 +232,7 @@ const HowItWorks = () => {
                     {i + 1}
                   </div>
                 </div>
-                
+
                 {/* Content Block */}
                 <div className={`transition-all duration-700 bg-white/50 py-2
                     ${isPassed ? 'opacity-100 translate-y-0' : 'opacity-30 translate-y-4'}`}>

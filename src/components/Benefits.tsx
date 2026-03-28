@@ -9,27 +9,27 @@ const benefits = [
   },
   {
     title: 'Faster cleaning',
-    description: 'Multi-drone deployment accelerates project timelines by up to 80%.',
+    description: 'Piloted drone operations accelerate project timelines significantly vs. traditional methods.',
     image: '/drone-cleaning.png'
   },
   {
     title: 'Increased safety',
-    description: 'Zero physical risk of human injury translates to lower insurance.',
+    description: 'No workers at height. Operations are conducted with full visual line of sight by a certified remote pilot.',
     image: '/safety.png'
   },
   {
     title: 'Minimal disruption',
-    description: 'Whisper-quiet electric drones ensure your tenants work peacefully.',
+    description: 'Whisper-quiet electric drone ensures your tenants work peacefully.',
     image: '/minimal-disruption.png'
   },
   {
     title: 'Scalable projects',
-    description: 'Uniform quality at limitless scale for massive commercial properties.',
+    description: 'Uniform quality for buildings of all sizes across Estonia, the Baltics, and Scandinavia.',
     image: '/scalable.png'
   },
   {
     title: 'Complex structures',
-    description: 'Effortlessly reach difficult angles and steep roofs safely.',
+    description: 'Effortlessly reach difficult angles and hard-to-access surfaces safely.',
     image: '/commercial.png'
   }
 ];
@@ -70,7 +70,7 @@ const Benefits = () => {
           <SectionHeading
             badge="Unmatched Value"
             title="Why Choose Drone Cleaning?"
-            subtitle="The traditional way is outdated. We bring highly cost-efficient advanced robotics to property maintenance."
+            subtitle="The traditional way is outdated. We bring precision piloted drone technology to building exterior maintenance."
           />
         </div>
 

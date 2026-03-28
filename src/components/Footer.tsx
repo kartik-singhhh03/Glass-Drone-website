@@ -173,7 +173,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[13px] text-[#64748b] font-semibold mb-1 uppercase tracking-wider">Call Us</span>
-                  <a href="tel:+18003766392" className="text-[#0f172a] font-medium hover:text-[#00ACCE] transition-colors link-underline pb-1 w-max block">+1-800-DRONE-WASH</a>
+                  <a href="tel:+3725503644" className="text-[#0f172a] font-medium hover:text-[#00ACCE] transition-colors link-underline pb-1 w-max block">+372 550 3644</a>
                 </div>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
@@ -182,7 +182,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[13px] text-[#64748b] font-semibold mb-1 uppercase tracking-wider">Email</span>
-                  <a href="mailto:hello@glassdrone.co" className="text-[#0f172a] font-medium hover:text-[#00ACCE] transition-colors link-underline pb-1 w-max block">hello@glassdrone.co</a>
+                  <a href="mailto:info@glassdrone.ee" className="text-[#0f172a] font-medium hover:text-[#00ACCE] transition-colors link-underline pb-1 w-max block">info@glassdrone.ee</a>
                 </div>
               </li>
               <li className="flex flex-col md:flex-row items-center md:items-start gap-4">
@@ -200,7 +200,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-gray-200/80 flex flex-col md:flex-row justify-between items-center gap-6 footer-elem">
           <p className="text-[#64748b] text-[14px] font-medium">
-            &copy; {new Date().getFullYear()} Glass Drone. All rights reserved.
+            &copy; {new Date().getFullYear()} Glass Drone OÜ. All rights reserved.
           </p>
           <div className="flex items-center gap-8 text-[14px] font-medium">
             <a href="#" className="text-[#64748b] hover:text-[#00ACCE] transition-colors duration-300 link-underline pb-1 block">Privacy Policy</a>

@@ -12,15 +12,15 @@ const services = [
   {
     title: 'High-Rise Exterior Cleaning',
     description:
-      'Clean impossibly tall buildings efficiently without the risk of costly scaffolding or dangling workers. Our autonomous drone fleet handles every floor with precision.',
-    benefit: 'Reduce traditional cleaning time by up to 60%',
-    image: '/HIGH-RISE CLEANING.png',
+      'Clean tall buildings efficiently without the risk of costly scaffolding or workers at height. Our C20 drone, piloted by a certified remote pilot, handles every floor with precision and care.',
+    benefit: 'Safer, faster, and more cost-efficient than traditional methods',
+    image: '/HIGH-RISE CLEANING.jpg',
     tag: 'Service 01',
   },
   {
     title: 'Glass Façade Maintenance',
     description:
-      'Maintain pristine, streak-free building exteriors utilizing advanced precision spraying technology. Each pass is calibrated for optical clarity and material safety.',
+      'Maintain pristine, streak-free building exteriors using advanced precision spraying technology. Each pass is calibrated for optical clarity and material safety.',
     benefit: 'Improve building value and occupant experience',
     image: '/GLASS FAÇADE MAINTENANCE.png',
     tag: 'Service 02',
@@ -28,7 +28,7 @@ const services = [
   {
     title: 'Hard-To-Reach Surfaces',
     description:
-      'Effortlessly clean architectural features, curves, and overhangs inaccessible by traditional crane baskets. Drones navigate complex geometry seamlessly.',
+      'Effortlessly clean architectural features, curves, and overhangs inaccessible by traditional crane baskets. The drone navigates complex geometry safely under full pilot control.',
     benefit: 'Zero manual risk or expensive mechanical lifts',
     image: '/HARD-TO-REACH SURFACES.png',
     tag: 'Service 03',
@@ -36,7 +36,7 @@ const services = [
   {
     title: 'Scheduled Maintenance',
     description:
-      'Automated, regular cleaning flight paths ensuring your building maintains a flawless look year-round. Set it once — our system handles the rest.',
+      'Regular cleaning visits ensuring your building maintains a flawless look year-round. Each operation is professionally planned, executed by a certified remote pilot.',
     benefit: 'Consistent, budgetable property management',
     image: '/SCHEDULED MAINTENANCE.png',
     tag: 'Service 04',
@@ -44,7 +44,7 @@ const services = [
   {
     title: 'Custom Cleaning Solutions',
     description:
-      'Tailored chemical treatments and specialized soft-wash protocols for sensitive building materials. Every solution is engineered to your exact façade requirements.',
+      'Tailored chemical treatments and specialised soft-wash protocols for sensitive building materials. Every solution is engineered to your exact façade requirements.',
     benefit: 'Flexible solutions scaled to your exact facade',
     image: '/hero_drone.png',
     tag: 'Service 05',

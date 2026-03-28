@@ -3,37 +3,13 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionWrapper from './ui/SectionWrapper';
 import SectionHeading from './ui/SectionHeading';
-import Button from './ui/Button';
-import Card from './ui/Card';
-import BeforeAfterSlider from './ui/BeforeAfterSlider';
-import { Clock, TrendingDown, Building2, CheckCircle } from 'lucide-react';
+import { Building2, CheckCircle } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const projects = [
-  {
-    title: 'The Vertex Tower',
-    type: '45-Story Commercial Skyscraper',
-    duration: '3 Days',
-    traditionalDuration: '14 Days',
-    timeSaved: '78%',
-    costReduced: '60%',
-    outcome: 'Complete exterior facade wash, including hard-to-reach recessed structural beams. Eliminated the need for 3 highly disruptive suspended scaffolds.',
-    image: '/commercial.png',
-  },
-  {
-    title: 'Oceanside Luxury Residence',
-    type: '22-Story High-End Residential',
-    duration: '1.5 Days',
-    traditionalDuration: '8 Days',
-    timeSaved: '81%',
-    costReduced: '45%',
-    outcome: 'Pristine ocean-facing balconies cleaned with whispering acoustic profile, resulting in zero noise complaints or resident disruption.',
-    image: '/residential.png',
-  }
-];
+
 
 const CaseStudies = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -85,80 +61,65 @@ const CaseStudies = () => {
   return (
     <SectionWrapper id="case-studies" bg="light" className="relative">
       <div ref={sectionRef} className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <SectionHeading 
-            badge="Proven Results"
-            title="Our Impact"
-            subtitle="Explore how we revolutionized property maintenance for these hallmark structures."
+            badge="Coming Soon"
+            title="Our Projects"
+            subtitle="We are preparing to launch our first drone cleaning operations in 2026."
             align="left"
             className="mb-0"
           />
-          <Button variant="outline" className="mb-4 hidden md:flex">
-            View All Projects
-          </Button>
         </div>
         
-        <div className="space-y-24 md:space-y-32">
-          {projects.map((project, index) => (
-            <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center`}>
-              
-              {/* Image / Slider Column */}
-              <div className="w-full lg:w-3/5 h-[400px] md:h-[600px] clip-reveal-container rounded-[2rem] overflow-hidden shadow-2xl shadow-dark/5">
-                <BeforeAfterSlider image={project.image} />
+        {/* Coming soon card */}
+        <div className="clip-reveal-container w-full bg-white rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-200/50 overflow-hidden">
+          <div className="project-content flex flex-col lg:flex-row items-center gap-12 p-10 md:p-16">
+            
+            {/* Image column */}
+            <div className="w-full lg:w-1/2 h-[300px] md:h-[420px] rounded-[1.5rem] overflow-hidden relative">
+              <img 
+                src="/commercial.png" 
+                alt="First drone cleaning project — launching 2026" 
+                className="w-full h-full object-cover opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
+                <span className="text-white font-semibold text-sm tracking-widest uppercase bg-blue-accent/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                  Launching 2026
+                </span>
               </div>
-              
-              {/* Content Column */}
-              <div className="w-full lg:w-2/5 project-content">
-                <Card padding="none" hover={false} border={false} className="bg-transparent lg:bg-white lg:p-10 lg:shadow-xl lg:shadow-gray-200/50 lg:-ml-24 lg:relative lg:z-10 rounded-none lg:rounded-[2rem]">
-                  <h3 className="text-3xl md:text-4xl font-bold text-dark mb-4">{project.title}</h3>
-                  
-                  <div className="flex items-center gap-2 mb-8 text-blue-accent font-medium bg-blue-accent/10 w-max px-4 py-2 rounded-lg">
-                    <Building2 size={18} />
-                    <span>{project.type}</span>
-                  </div>
-                  
-                  <div className="space-y-6 mb-8">
-                    <div>
-                      <h4 className="text-dark font-bold mb-2 flex items-center gap-2">
-                        <CheckCircle size={18} className="text-blue-accent" /> Project Outcome
-                      </h4>
-                      <p className="text-dark/70 font-light leading-relaxed">
-                        {project.outcome}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-light p-5 rounded-2xl border border-gray-100">
-                      <Clock size={24} className="text-blue-accent mb-3" />
-                      <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-1">Duration</p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-bold text-dark">{project.duration}</span>
-                      </div>
-                      <p className="text-dark/50 text-xs font-medium mt-1">vs {project.traditionalDuration} traditional</p>
-                    </div>
-                    
-                    <div className="bg-blue-accent/5 p-5 rounded-2xl border border-blue-accent/20">
-                      <TrendingDown size={24} className="text-blue-accent mb-3" />
-                      <p className="text-blue-accent/70 text-xs font-bold uppercase tracking-wider mb-1">Cost Reduced</p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-bold text-blue-accent">{project.costReduced}</span>
-                      </div>
-                      <p className="text-blue-accent/70 text-xs font-medium mt-1">Time saved: {project.timeSaved}</p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-              
             </div>
-          ))}
+
+            {/* Content column */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div className="flex items-center gap-2 mb-6 text-blue-accent font-medium bg-blue-accent/10 w-max px-4 py-2 rounded-lg">
+                <Building2 size={18} />
+                <span>High-Rise Exterior Cleaning</span>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold text-dark mb-4 leading-tight">
+                First projects launching in 2026
+              </h3>
+              <p className="text-dark/70 font-light leading-relaxed text-lg mb-8">
+                Contact us to be among the first to experience precision piloted drone cleaning for your building. We are actively onboarding clients for our inaugural season.
+              </p>
+              <div className="flex items-center gap-3 bg-blue-accent/5 border border-blue-accent/20 rounded-2xl p-5">
+                <CheckCircle size={22} className="text-blue-accent flex-shrink-0" />
+                <p className="text-dark/80 font-medium">
+                  Reach out today to secure your spot and receive a personalised quote.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div className="mt-16 flex justify-center md:hidden">
-          <Button variant="outline" className="w-full">
-            View All Projects
-          </Button>
+
+        <div className="mt-12 flex justify-center">
+          <a 
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-blue-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-accent/90 transition-all duration-300 shadow-lg shadow-blue-accent/20 hover:-translate-y-1"
+          >
+            Get in Touch
+          </a>
         </div>
+
       </div>
     </SectionWrapper>
   );

@@ -12,31 +12,35 @@ if (typeof window !== 'undefined') {
 const faqs = [
   {
     question: "Is drone cleaning safe?",
-    answer: "Absolutely. Drones completely replace human workers on dangerous scaffolding. We use high-capacity tethered systems strictly equipped with redundant power, precise collision avoidance sensors, and rigorous pre-flight safety checks to ensure zero risk to your property or pedestrians."
+    answer: "Yes. The drone is piloted in full visual line of sight by a certified remote pilot at all times. This eliminates the need for workers on scaffolding or at height. Each operation follows strict safety procedures, including pre-flight checks and controlled flight paths to ensure safety for both the property and surrounding environment."
   },
   {
     question: "What building heights are supported?",
-    answer: "Our continuous-power tethered drones can effortlessly reach up to 45 stories tall directly from the ground level. For extreme skyscrapers above that threshold, we can legally and safely deploy from intermediate terraced levels or the roof downward."
+    answer: "Our system is designed for high-rise buildings and can operate efficiently across a wide range of heights. Operations are planned based on site conditions and safety regulations, ensuring optimal coverage and safe execution."
   },
   {
     question: "Does weather affect operations?",
-    answer: "Yes. For optimal safety and spotless wash results, we require wind speeds below 20 mph and no active heavy precipitation. Our dedicated operations team monitors meteorological data constantly to confidently schedule and execute the perfect flight window."
+    answer: "Yes. For safe and effective cleaning, operations require suitable weather conditions, including low wind speeds and no heavy precipitation. Each project is scheduled based on real-time weather monitoring to ensure optimal results."
+  },
+  {
+    question: "How does the drone cleaning system work?",
+    answer: "The drone is equipped with a pressure washing system and operates at a safe distance from the building (typically 5 meters or more). A water hose runs from the ground to the drone, supplying continuous flow. We use deionised water to ensure a spotless, streak-free finish after drying. For heavily soiled surfaces, a specialised cleaning foam is applied before rinsing."
   },
   {
     question: "Is it suitable for all glass types?",
-    answer: "Yes. We utilize a highly calibrated low-pressure spray combined with specialized ultra-soft rotating aviation brushes. It is entirely safe for all exterior architectural glass, including tinted, coated, reflective, or even historic delicate panes."
+    answer: "Yes. We utilise a precisely calibrated low-pressure spray system. It is entirely safe for all exterior architectural glass, including tinted, coated, reflective, or delicate panes."
   },
   {
     question: "Are permits required?",
-    answer: "We handle 100% of all local and national aviation compliance on our end. Depending on your building's location, we routinely file the necessary FAA or EASA airspace waivers for urban flying and organize any required temporary ground perimeters."
+    answer: "We handle all aviation compliance on our end. Our operations are conducted under PDRA-S01 v1.2 compliant procedures with operational authorisation OT_264_K1 issued by the Estonian Transport Administration."
   },
   {
     question: "How long does cleaning take?",
-    answer: "Drone operations are radically faster. A massive commercial mid-rise that traditionally takes a rope-access crew over two weeks can often be meticulously washed by our fleet deployment in just 1 to 3 days."
+    answer: "Piloted drone operations are significantly faster than traditional methods. A commercial building that traditionally takes a rope-access crew over two weeks can often be completed in a fraction of the time, with far less disruption to tenants or the surrounding area."
   },
   {
     question: "Do you offer recurring service?",
-    answer: "Yes. Most commercial and luxury residential clients choose a quarterly or bi-annual maintenance contract to keep their properties pristine. Subscribing to a scheduled maintenance rhythm locks in our most heavily discounted service pricing."
+    answer: "Yes. Most commercial and residential clients choose a quarterly or bi-annual maintenance schedule to keep their properties pristine year-round. Contact us to discuss a tailored maintenance plan."
   }
 ];
 
@@ -76,7 +80,7 @@ const FAQ = () => {
         <SectionHeading 
           badge="Knowledge Base"
           title="Frequently Asked Questions" 
-          subtitle="Everything you need to know about autonomous exterior building maintenance."
+          subtitle="Everything you need to know about our piloted drone exterior cleaning service."
           className="mb-16" 
         />
         

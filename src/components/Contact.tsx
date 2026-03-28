@@ -26,7 +26,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">Call Us Directly</p>
-                <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors">+372 555 1234</p>
+                <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors">+372 550 3644</p>
                 <p className="text-dark/60 text-sm mt-1">Available Mon-Fri, 9am - 6pm</p>
               </div>
             </Card>
@@ -37,7 +37,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">Email Us</p>
-                <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">hello@glassdrone.ee</p>
+                <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">info@glassdrone.ee</p>
               </div>
             </Card>
 

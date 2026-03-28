@@ -13,35 +13,35 @@ if (typeof window !== 'undefined') {
 const safetyFeatures = [
   {
     icon: <Award className="w-8 h-8 text-white" />,
-    title: 'Certified Operators',
-    desc: 'All pilots undergo rigorous training and hold advanced commercial drone flight certifications.'
+    title: 'Certified Remote Pilots',
+    desc: 'All operations are conducted by certified remote pilots (RPIC) who maintain full visual line of sight at all times.'
   },
   {
     icon: <ShieldCheck className="w-8 h-8 text-white" />,
-    title: 'Full Insurance Coverage',
-    desc: 'Covered by a €10M specialized aviation liability policy, guaranteeing absolute safety for your asset.'
+    title: 'Active Insurance Coverage',
+    desc: 'All operations are covered by an active insurance policy, providing comprehensive protection for your property.'
   },
   {
     icon: <Scale className="w-8 h-8 text-white" />,
     title: 'Regulatory Compliance',
-    desc: 'Strict adherence to EASA (European Union Aviation Safety Agency) drone operation standards.'
+    desc: 'PDRA-S01 v1.2 compliant operations – operational authorisation OT_264_K1 issued by the Estonian Transport Administration.'
   },
   {
     icon: <FileText className="w-8 h-8 text-white" />,
-    title: 'Risk Assessments',
-    desc: 'Detailed SORA (Specific Operations Risk Assessment) is conducted structurally before every project.'
+    title: 'Pre-Flight Risk Assessments',
+    desc: 'A thorough operational risk assessment is conducted before every project to ensure safe and compliant execution.'
   },
   {
     icon: <CloudRain className="w-8 h-8 text-white" />,
-    title: 'Weather Monitoring Systems',
-    desc: 'Advanced meteorological sensors autonomously ground missions if wind or rain exceed safe thresholds.'
+    title: 'Weather Monitoring',
+    desc: 'Each project is scheduled based on real-time meteorological monitoring. Operations are grounded if wind or rain exceed safe thresholds.'
   }
 ];
 
 const trustBadges = [
-  'EASA Certified Provider',
-  '€10M Comprehensive Liability',
-  'ISO 9001:2015 Compliant',
+  'PDRA-S01 v1.2 Compliant',
+  'Active Insurance Coverage',
+  'Certified Remote Pilots',
   'Zero Incident Record'
 ];
 
