@@ -3,10 +3,12 @@ import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle } fro
 import SectionWrapper from './ui/SectionWrapper';
 import SectionHeading from './ui/SectionHeading';
 import Button from './ui/Button';
+import { useTranslation } from 'react-i18next';
 
 const FORMSPREE_URL = 'https://formspree.io/f/xnjopvzj';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('Please fill in all required fields (*) or try again.');
 
@@ -146,9 +148,9 @@ const Contact = () => {
       />
 
       <SectionHeading
-        badge="Ready to start?"
-        title="Get an Exact Quote"
-        subtitle="Fill out your property details below. Our team maps your building using satellite data and provides an accurate estimate rapidly."
+        badge={t('contact.badge')}
+        title={t('contact.title')}
+        subtitle={t('contact.subtitle')}
         className="mb-16 relative z-10"
       />
 
@@ -168,9 +170,9 @@ const Contact = () => {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">Call Us Directly</p>
+                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">{t('contact.call_us')}</p>
                   <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors">+372 550 3644</p>
-                  <p className="text-dark/60 text-sm mt-1">Available Mon-Fri, 9am - 6pm</p>
+                  <p className="text-dark/60 text-sm mt-1">{t('contact.available_time')}</p>
                 </div>
               </div>
             </div>
@@ -185,7 +187,7 @@ const Contact = () => {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">Email Us</p>
+                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">{t('contact.email_us')}</p>
                   <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">info@glassdrone.ee</p>
                 </div>
               </div>
@@ -204,8 +206,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">WhatsApp</p>
-                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">Instant response</p>
-                  <a href="https://wa.me/3725503644" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-sm font-semibold text-blue-accent border-b border-blue-accent/30 hover:border-blue-accent pb-0.5 transition-colors">Start Chat →</a>
+                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">{t('contact.instant_response')}</p>
+                  <a href="https://wa.me/3725503644" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-sm font-semibold text-blue-accent border-b border-blue-accent/30 hover:border-blue-accent pb-0.5 transition-colors">{t('contact.start_chat')} →</a>
                 </div>
               </div>
             </div>
@@ -218,8 +220,8 @@ const Contact = () => {
                 </div>
                 <div className="contact-card-content flex flex-col items-center w-full">
                   <MapPin className="text-blue-accent mb-3" size={28} />
-                  <p className="text-dark font-bold mb-1">Service Area</p>
-                  <p className="text-dark/60 text-sm leading-relaxed">Estonia, Baltics & Scandinavia</p>
+                  <p className="text-dark font-bold mb-1">{t('contact.service_area')}</p>
+                  <p className="text-dark/60 text-sm leading-relaxed">{t('contact.service_area_desc')}</p>
                 </div>
               </div>
 
@@ -248,7 +250,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-card-content w-full">
-              <h3 className="text-2xl font-bold text-dark mb-8">Property Details</h3>
+              <h3 className="text-2xl font-bold text-dark mb-8">{t('contact.form_title')}</h3>
 
               <form action={FORMSPREE_URL} method="POST" className="flex flex-col gap-6" onSubmit={handleSubmit}>
 
@@ -257,11 +259,11 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label className="text-dark font-semibold text-sm ml-1">Full Name <span className="text-red-400">*</span></label>
+                    <label className="text-dark font-semibold text-sm ml-1">{t('contact.form_name')} <span className="text-red-400">*</span></label>
                     <input
                       type="text"
                       name="name"
-                      placeholder="Jane Doe"
+                      placeholder={t('contact.form_name_placeholder')}
                       required
                       className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none text-dark"
                     />
@@ -310,11 +312,11 @@ const Contact = () => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-dark font-semibold text-sm ml-1">Project Description & Requirements <span className="text-red-400">*</span></label>
+                  <label className="text-dark font-semibold text-sm ml-1">{t('contact.form_message')} <span className="text-red-400">*</span></label>
                   <textarea
                     name="message"
                     rows={4}
-                    placeholder="E.g. 15-story residential building, roughly 200 windows. Hasn't been cleaned in 2 years. Looking for a fast turnaround."
+                    placeholder={t('contact.form_message_placeholder')}
                     required
                     className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none resize-none text-dark"
                   ></textarea>
@@ -342,7 +344,7 @@ const Contact = () => {
                   className="w-full mt-4 flex justify-center items-center gap-3 shadow-xl shadow-blue-accent/20"
                   disabled={status === 'sending' || status === 'success'}
                 >
-                  {status === 'sending' ? 'Sending…' : status === 'success' ? '✓ Sent!' : 'Submit Project Details'}
+                  {status === 'sending' ? t('contact.form_sending') : status === 'success' ? t('contact.form_sent') : t('contact.submit_btn')}
                   {status !== 'sending' && status !== 'success' && (
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   )}

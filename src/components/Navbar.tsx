@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import Button from './ui/Button';
 
@@ -13,6 +14,13 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('lang', lng);
+  };
 
   const navLinks = [
     { name: 'Home', href: '#' },
@@ -46,28 +54,42 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-7 lg:gap-9">
+        <div className="hidden xl:flex items-center flex-wrap gap-4 xl:gap-7 justify-center max-w-[65%]">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="font-medium text-sm lg:text-[15px] text-slate-600 hover:text-blue-accent transition-colors duration-300"
+              className="font-medium text-[13px] xl:text-[14px] whitespace-nowrap text-slate-600 hover:text-blue-accent transition-colors duration-300"
             >
-              {link.name}
+              {t(`nav.${link.name}`)}
             </a>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden lg:flex">
+        {/* CTA & Language Toggle */}
+        <div className="hidden xl:flex items-center gap-2 xl:gap-4">
+          <div className="flex bg-slate-100 p-1 rounded-full text-xs font-bold mr-2">
+            <button 
+              onClick={() => changeLanguage('et')}
+              className={`px-3 py-1.5 rounded-full transition-all ${i18n.language === 'et' ? 'bg-white text-blue-accent shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+            >
+              ET
+            </button>
+            <button 
+              onClick={() => changeLanguage('en')}
+              className={`px-3 py-1.5 rounded-full transition-all ${i18n.language === 'en' ? 'bg-white text-blue-accent shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+            >
+              EN
+            </button>
+          </div>
           <Button href="#contact" variant="primary" className="px-6 py-2.5 text-sm">
-            Get a Quote
+            {t('nav.Get a Quote')}
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-full transition-colors"
+          className="xl:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-full transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,7 +98,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Content - Absolute positioned below the pill */}
       <div
-        className={`lg:hidden absolute top-[calc(100%+16px)] left-0 w-full bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top border border-white/50 ${mobileMenuOpen ? 'max-h-[600px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95 pointer-events-none'}`}
+        className={`xl:hidden absolute top-[calc(100%+16px)] left-0 w-full bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top border border-white/50 ${mobileMenuOpen ? 'max-h-[600px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95 pointer-events-none'}`}
       >
         <div className="px-6 py-6 flex flex-col gap-2">
           {navLinks.map((link) => (
@@ -86,7 +108,7 @@ const Navbar = () => {
               className="font-medium text-lg text-slate-700 py-3 border-b border-slate-100/60 hover:text-blue-accent hover:pl-2 transition-all duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {link.name}
+              {t(`nav.${link.name}`)}
             </a>
           ))}
           <Button
@@ -95,8 +117,24 @@ const Navbar = () => {
             className="w-full mt-6 py-4"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get a Quote
+            {t('nav.Get a Quote')}
           </Button>
+          
+          {/* Mobile Language Toggle */}
+          <div className="flex bg-slate-100 p-1 rounded-full text-sm font-bold mt-4 w-max mx-auto">
+            <button 
+              onClick={() => changeLanguage('et')}
+              className={`px-6 py-2 rounded-full transition-all ${i18n.language === 'et' ? 'bg-white text-blue-accent shadow-sm' : 'text-slate-500'}`}
+            >
+              ET
+            </button>
+            <button 
+              onClick={() => changeLanguage('en')}
+              className={`px-6 py-2 rounded-full transition-all ${i18n.language === 'en' ? 'bg-white text-blue-accent shadow-sm' : 'text-slate-500'}`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </nav>

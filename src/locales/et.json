@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "Home": "Avaleht",
+    "Services": "Teenused",
+    "How It Works": "Kuidas see töötab",
+    "Projects": "Projektid",
+    "Safety": "Ohutus",
+    "FAQ": "KKK",
+    "Contact": "Kontakt",
+    "Get a Quote": "Küsi hinnapakkumist"
+  },
+  "hero": {
+    "title_part1": "Drooniga aknapesu ",
+    "title_highlight": "kõrghoonetele",
+    "title_part2": " Eestis",
+    "subtitle": "Ohutum, kiirem ja kuluefektiivsem viis klaasfassaadide ja raskesti ligipääsetavate pindade puhastamiseks.",
+    "areas": "Teenindame elamu-, äri- ja valitsushooneid üle Eesti, laienedes Baltikumi ja Skandinaaviasse.",
+    "get_quote": "Küsi hinnapakkumist",
+    "watch_demo": "Vaata videot",
+    "contact_us": "Võta ühendust",
+    "chat_whatsapp": "Kirjuta WhatsAppis"
+  },
+  "whatsapp": {
+    "chat_with_us": "Kirjuta meile"
+  },
+  "services": {
+    "badge": "Mida me teeme",
+    "title": "Kõrgtasemel puhastuslahendused",
+    "subtitle": "Premium droonitehnoloogia, mis on kohandatud iga arhitektuurilise väljakutse jaoks.",
+    "core_benefit": "Peamine eelis",
+    "items": {
+      "service01": {
+        "title": "Kõrghoonete välispuhastus",
+        "desc": "Puhastage kõrgeid hooneid tõhusalt ilma kallite tellingute või kõrguses töötajate riskita. Meie C20 droon, mida juhib sertifitseeritud kaugpiloot, käsitleb igat korrust täpselt ja hoolikalt.",
+        "benefit": "Ohutum, kiirem ja kuluefektiivsem kui traditsioonilised meetodid",
+        "tag": "Teenus 01"
+      },
+      "service02": {
+        "title": "Klaasfassaadide hooldus",
+        "desc": "Hoidke hoonete välispinnad puhtad ja triipudeta, kasutades täiustatud täppispihustustehnoloogiat. Iga ülesõit on kalibreeritud optilise selguse ja materjali ohutuse tagamiseks.",
+        "benefit": "Parandab hoone väärtust ja elanike kogemust",
+        "tag": "Teenus 02"
+      },
+      "service03": {
+        "title": "Raskesti ligipääsetavad pinnad",
+        "desc": "Puhastab vaevata arhitektuurilisi detaile, kumerusi ja üleulatuvaid osi, kuhu traditsioonilised tõstukid ei ulatu. Droon navigeerib keerulises geomeetrias turvaliselt piloodi täieliku kontrolli all.",
+        "benefit": "Null manuaalset riski või kalleid mehaanilisi tõstukeid",
+        "tag": "Teenus 03"
+      },
+      "service04": {
+        "title": "Regulaarne hooldus",
+        "desc": "Regulaarsed puhastuskülastused, mis tagavad teie hoonele veatu ilme aastaringselt. Iga operatsioon on professionaalselt planeeritud ja läbi viidud sertifitseeritud kaugpiloodi poolt.",
+        "benefit": "Järjepidev ja eelarvestatav kinnisvarahaldus",
+        "tag": "Teenus 04"
+      },
+      "service05": {
+        "title": "Kohandatud puhastuslahendused",
+        "desc": "Kohandatud keemilised töötlused ja spetsiaalsed pehmepesu protokollid tundlikele ehitusmaterjalidele. Iga lahendus on konstrueeritud vastavalt teie fassaadi täpsetele nõuetele.",
+        "benefit": "Paindlikud lahendused vastavalt teie fassaadile",
+        "tag": "Teenus 05"
+      }
+    }
+  },
+  "target": {
+    "badge": "Globaalne ulatus",
+    "title": "Keda me teenindame",
+    "subtitle": "Loodud kohanema igas tööstusharus, tagavad meie autonoomsed puhastussüsteemid kiire kasutuselevõtu ja veatu tulemuse.",
+    "items": {
+      "client01": {
+        "title": "Bürood ja ärihooned",
+        "desc": "Kõrghooned ja äripinnad puhastatakse tõhusalt ilma töökatkestusteta."
+      },
+      "client02": {
+        "title": "Elamukompleksid",
+        "desc": "Vaikne ja täpne töö, mis sobib ideaalselt esmaklassilisse elukeskkonda."
+      },
+      "client03": {
+        "title": "Hotellid ja kuurordid",
+        "desc": "Tõsta külaliste kogemust särava klaasi ja puhaste fassaadidega."
+      },
+      "client04": {
+        "title": "Tööstushooned",
+        "desc": "Ohutu lahendus hiigelpindadele ja keerulistele inseneriväljakutsetele."
+      },
+      "client05": {
+        "title": "Kaubanduskeskused",
+        "desc": "Hoia vaateaknad säravpuhaste, tagades maksimaalse nähtavuse."
+      },
+      "client06": {
+        "title": "Klaasist ehitised",
+        "desc": "Spetsiaalne pehmepesu droonihooldus õrnale arhitektuuriklaasile."
+      }
+    }
+  },
+  "benefits": {
+    "badge": "Enneolematu väärtus",
+    "title": "Miks valida droonipuhastus?",
+    "subtitle": "Traditsiooniline viis on aegunud. Toome hooldusesse täppisjuhitava droonitehnoloogia.",
+    "items": {
+      "benefit01": {
+        "title": "Tellinguid pole vaja",
+        "desc": "Kõrvaldab rasketehnika rendikulud ja paigaldusaega."
+      },
+      "benefit02": {
+        "title": "Kiirem puhastus",
+        "desc": "Droonioperatsioonid kiirendavad projekte oluliselt võrreldes traditsiooniliste meetoditega."
+      },
+      "benefit03": {
+        "title": "Suurem ohutus",
+        "desc": "Töölisi ei saadeta kõrgustesse. Operatsioonid viib läbi sertifitseeritud kaugpiloot otsese visuaalse kontakti all."
+      },
+      "benefit04": {
+        "title": "Minimaalne häiring",
+        "desc": "Vaikne elektridroon võimaldab teie üürnikel rahus töötada."
+      },
+      "benefit05": {
+        "title": "Skaleeritavad projektid",
+        "desc": "Ühtlane kvaliteet igas suuruses hoonetele Eestis, Baltikumis ja Skandinaavias."
+      },
+      "benefit06": {
+        "title": "Keerulised struktuurid",
+        "desc": "Ulatub ohutult raskesti ligipääsetavate nurkade ja pindadeni."
+      }
+    }
+  },
+  "safety": {
+    "badge": "Kompromissitu ohutus",
+    "title": "Ohutus- ja vastavusstandard.",
+    "subtitle": "Meie protokoll tagab teie vara, toimingute ja avalikkuse 100% kaitse.",
+    "badges": {
+      "badge01": "PDRA-S01 v1.2 vastav",
+      "badge02": "Aktiivne kindlustuskaitse",
+      "badge03": "Sertifitseeritud kaugpiloodid",
+      "badge04": "Puhas ohutusajalugu (0 intsidenti)"
+    },
+    "items": {
+      "feature01": {
+        "title": "Sertifitseeritud kaugpiloodid",
+        "desc": "Kõik operatsioonid viivad läbi sertifitseeritud kaugpiloodid, kes hoiavad alati seadmega otsest visuaalset kontakti."
+      },
+      "feature02": {
+        "title": "Aktiivne kindlustuskaitse",
+        "desc": "Kõik operatsioonid on kaetud aktiivse kindlustuspoliisiga, pakkudes teie varale täielikku kaitset."
+      },
+      "feature03": {
+        "title": "Regulatiivne vastavus",
+        "desc": "PDRA-S01 v1.2 vastavad operatsioonid – lennuluba on väljastatud Transpordiameti poolt."
+      },
+      "feature04": {
+        "title": "Riskide hindamine enne lendu",
+        "desc": "Enne iga projekti viiakse läbi põhjalik operatsiooniriskide hindamine."
+      },
+      "feature05": {
+        "title": "Ilmaseire",
+        "desc": "Iga projekt on planeeritud reaalajas ilmaseire põhjal. Tugeva tuule või vihma korral lennud peatatakse."
+      }
+    }
+  },
+  "how": {
+    "badge": "Sujuv protsess",
+    "title": "Kuidas see töötab",
+    "subtitle": "Professionaalselt juhitud 4-astmeline droonipuhastuse protsess, mis on kohandatud teie hoonele.",
+    "items": {
+      "step01": {
+        "title": "Hoone hindamine",
+        "desc": "Kasutame satelliitkaardistust ja objektide külastusi, et lennu- ja logistikaplaanid täpselt paika panna."
+      },
+      "step02": {
+        "title": "Puhastusplaan",
+        "desc": "Planeerime täpsed droonide lennutrajektoorid ja kehtestame ranged ohutustsoonid vastavalt PDRA-S01 nõuetele."
+      },
+      "step03": {
+        "title": "Droonipuhastus",
+        "desc": "C20 drooni juhib sertifitseeritud kaugpiloot otsese visuaalse kontakti all, rakendades kõrgsurve pesu ohutult fassaadidele."
+      },
+      "step04": {
+        "title": "Tulemuste üleandmine",
+        "desc": "Täielik dokumentatsioon, kõrge eraldusvõimega enne/pärast pildid ja tulevaste hoolduste ajakirja koostamine."
+      }
+    }
+  },
+  "projects": {
+    "badge": "Tulekul",
+    "title": "Meie projektid",
+    "subtitle": "Valmistume esimeste droonipuhastustööde käivitamiseks 2026. aastal.",
+    "launching": "Käivitub 2026",
+    "feature": "Kõrghoonete välipuhastus",
+    "card_title": "Esimesed projektid käivituvad 2026. aastal",
+    "card_desc": "Võtke meiega ühendust, et olla esimesed, kes kogevad täppisjuhitavat droonipuhastust oma hoones. Registreerime praegu kliente esimeseks hooajaks.",
+    "card_highlight": "Võtke meiega ühendust juba täna, et kindlustada oma koht ja saada personaalne hinnapakkumine.",
+    "btn": "Võta ühendust"
+  },
+  "pricing": {
+    "badge": "Väärtuspõhine lähenemine",
+    "title": "Kuidas kujuneb hind",
+    "subtitle": "Droonipuhastus välistab täielikult tellingute baaskulud. Iga lõplik pakkumine on kohandatud vastavalt kuuele põhimuutujale.",
+    "items": {
+      "factor01": {
+        "title": "Hoone kõrgus",
+        "desc": "Äärmiselt kõrged hooned nõuavad spetsiaalseid turvasüsteeme ja optimeeritud vedelikusurve reguleerimist."
+      },
+      "factor02": {
+        "title": "Pindala",
+        "desc": "Klaasfassaadi kogupindala määrab kogu lennuaja ja kasutatavate droonide arvu."
+      },
+      "factor03": {
+        "title": "Juurdepääsetavus",
+        "desc": "Keerulised arhitektuursed elemendid ja piiratud maapealne ala mõjutavad algset seadistusaega."
+      },
+      "factor04": {
+        "title": "Määrdumus",
+        "desc": "Tugev atmosfääriline mustus võib nõuda spetsiaalseid pehmeid harju või mitut eeltöötluse pesutsüklit."
+      },
+      "factor05": {
+        "title": "Sagedus",
+        "desc": "Pikaajalised hoolduslepingud on märkimisväärselt soodsamad võrreldes ühekordsete suurte puhastustöödega."
+      },
+      "factor06": {
+        "title": "Asukoht",
+        "desc": "Kohalikud lennulubade nõuded, õhuruumi klassi piirangud ja transpordilogistika."
+      }
+    },
+    "cta": {
+      "title": "Oled valmis täpsete arvude jaoks?",
+      "desc": "Kaota ära oletamine. Kasutame satelliidipilte, et arvutada 90% teie hinnast juba enne meie esimest kõnet.",
+      "btn": "Saada hoone andmed kiireks pakkumiseks"
+    }
+  },
+  "faq": {
+    "badge": "Teadmistebaas",
+    "title": "Korduma Kippuvad Küsimused",
+    "subtitle": "Kõik, mida pead teadma meie drooniga välipuhastuse teenusest.",
+    "items": {
+      "faq01": {
+        "q": "Kas droonipuhastus on ohutu?",
+        "a": "Jah. Drooni juhib sertifitseeritud kaugpiloot, kellel on alati otsene visuaalne kontakt seadmega. See välistab vajaduse töölistel töötada tellingutel. Iga operatsioon järgib rangeid ohutusprotseduure, sealhulgas lennueelseid kontrolle ja kindlaid lennuradu, tagades nii vara kui keskkonna ohutuse."
+      },
+      "faq02": {
+        "q": "Millised hoonete kõrgused on toetatud?",
+        "a": "Meie süsteem on mõeldud kõrghoonetele ja suudab töötada tõhusalt väga erinevatel kõrgustel. Operatsioonid planeeritakse vastavalt asukoha tingimustele ja ohutusnõuetele, tagades ohutu teostuse."
+      },
+      "faq03": {
+        "q": "Kas ilm mõjutab operatsioone?",
+        "a": "Jah. Ohutuks ja tõhusaks puhastamiseks on vajalikud sobivad ilmastikuolud, sealhulgas madal tuulekiirus ja tugeva saju puudumine. Iga projekt planeeritakse reaalajas ilmaseire põhjal."
+      },
+      "faq04": {
+        "q": "Kuidas droonipuhastuse süsteem töötab?",
+        "a": "Droon on varustatud survepesusüsteemiga ja töötab hoone ohutul kaugusel (tavaliselt 5 meetrit või rohkem). Veetoru jookseb maapinnalt droonini, tagades pideva voolu. Kasutame deioniseeritud vett, et tagada määrdumisvaba lõpptulemus ilma plekkideta."
+      },
+      "faq05": {
+        "q": "Kas see sobib igat tüüpi klaasidele?",
+        "a": "Jah. Kasutame täpselt kalibreeritud madalsurvesüsteemi, mis sobib kõikidele arhitektuursetele klaasidele, sealhulgas toonitud, peegelduvad ja õrnad päikesekaitseklaasid."
+      },
+      "faq06": {
+        "q": "Kas lennuload on vajalikud?",
+        "a": "Jah, aga meie hoolitseme kõigi lennulubade eest. Meie lennutegevus on kooskõlastatud Transpordiametiga ja toimub PDRA-S01 standardstsenaariumi alusel seadustega kooskõlas."
+      },
+      "faq07": {
+        "q": "Kui kaua puhastamine aega võtab?",
+        "a": "Droonigapuhastus on tunduvalt kiirem kui traditsioonilised meetodid. Ärihoone, mille pesemine köielpääsu tehnikutega võtaks üle kahe nädala, saab sageli tehtud murdosa ajaga ja väiksema häirimisega üürnikele."
+      },
+      "faq08": {
+        "q": "Kas pakute regulaarset teenust?",
+        "a": "Jah. Enamik meie äri- ja erakliente valib kvartaalse või poolaastase hooldusgraafiku, et hoida oma vara aastaringselt laitmatu."
+      }
+    }
+  },
+  "footer": {
+    "cta_title": "Oled valmis oma hooldust muutma?",
+    "cta_desc": "Saage kohandatud droonipuhastuse plaan, mis on ideaalselt skaalatud teie arhitektuurile.",
+    "cta_btn": "Saa Tasuta Hinnapakkumine",
+    "prefer_chat": "Eelistad kiiret vestlust?",
+    "talk_instantly": "Räägi meiega kohe",
+    "desc": "Kõrgtasemel drooniga välipuhastuslahendused, mis on loodud ohutuse, tõhususe ja arhitektuurilise skaala jaoks.",
+    "nav_title": "Navigatsioon",
+    "company_title": "Ettevõte",
+    "contact_title": "Võtke Meiega Ühendust",
+    "call_us": "Helista meile",
+    "email": "E-post",
+    "links": {
+      "home": "Koduleht",
+      "services": "Teenused",
+      "how": "Kuidas see töötab",
+      "projects": "Projektid",
+      "safety": "Ohutusstandard",
+      "faq": "KKK",
+      "careers": "Karjäär",
+      "contact": "Võta ühendust"
+    }
+  },
+  "contact": {
+    "badge": "Oled valmis alustama?",
+    "title": "Saa täpne hinnapakkumine",
+    "subtitle": "Täida allolev vorm oma objekti andmetega. Meie meeskond kaardistab teie hoone satelliidiandmete abil ja koostab kiiresti täpse eelarve.",
+    "call_us": "Helista meile",
+    "available_time": "E-R, 9:00 - 18:00",
+    "email_us": "Kirjuta meile",
+    "instant_response": "Kiire vastus",
+    "start_chat": "Alusta vestlust",
+    "service_area": "Teeninduspiirkond",
+    "service_area_desc": "Eesti, Baltikum ja Skandinaavia",
+    "form_title": "Objekti andmed",
+    "form_name": "Täisnimi",
+    "form_name_placeholder": "Jaan Tamm",
+    "form_message": "Projekti kirjeldus ja nõuded",
+    "form_message_placeholder": "Näiteks: 15-korruseline kortermaja, umbes 200 akent.",
+    "form_sending": "Saadab…",
+    "form_sent": "✓ Saadetud!",
+    "submit_btn": "Saada projekti andmed"
+  },
+  "slider": {
+    "before": "Enne",
+    "after": "Pärast"
+  }
+}

@@ -4,47 +4,25 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Plus, Minus } from 'lucide-react';
 import SectionWrapper from './ui/SectionWrapper';
 import SectionHeading from './ui/SectionHeading';
+import { useTranslation } from 'react-i18next';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const faqs = [
-  {
-    question: "Is drone cleaning safe?",
-    answer: "Yes. The drone is piloted in full visual line of sight by a certified remote pilot at all times. This eliminates the need for workers on scaffolding or at height. Each operation follows strict safety procedures, including pre-flight checks and controlled flight paths to ensure safety for both the property and surrounding environment."
-  },
-  {
-    question: "What building heights are supported?",
-    answer: "Our system is designed for high-rise buildings and can operate efficiently across a wide range of heights. Operations are planned based on site conditions and safety regulations, ensuring optimal coverage and safe execution."
-  },
-  {
-    question: "Does weather affect operations?",
-    answer: "Yes. For safe and effective cleaning, operations require suitable weather conditions, including low wind speeds and no heavy precipitation. Each project is scheduled based on real-time weather monitoring to ensure optimal results."
-  },
-  {
-    question: "How does the drone cleaning system work?",
-    answer: "The drone is equipped with a pressure washing system and operates at a safe distance from the building (typically 5 meters or more). A water hose runs from the ground to the drone, supplying continuous flow. We use deionised water to ensure a spotless, streak-free finish after drying. For heavily soiled surfaces, a specialised cleaning foam is applied before rinsing."
-  },
-  {
-    question: "Is it suitable for all glass types?",
-    answer: "Yes. We utilise a precisely calibrated low-pressure spray system. It is entirely safe for all exterior architectural glass, including tinted, coated, reflective, or delicate panes."
-  },
-  {
-    question: "Are permits required?",
-    answer: "We handle all aviation compliance on our end. Our operations are conducted under PDRA-S01 v1.2 compliant procedures with operational authorisation OT_264_K1 issued by the Estonian Transport Administration."
-  },
-  {
-    question: "How long does cleaning take?",
-    answer: "Piloted drone operations are significantly faster than traditional methods. A commercial building that traditionally takes a rope-access crew over two weeks can often be completed in a fraction of the time, with far less disruption to tenants or the surrounding area."
-  },
-  {
-    question: "Do you offer recurring service?",
-    answer: "Yes. Most commercial and residential clients choose a quarterly or bi-annual maintenance schedule to keep their properties pristine year-round. Contact us to discuss a tailored maintenance plan."
-  }
+  { key: 'faq01' },
+  { key: 'faq02' },
+  { key: 'faq03' },
+  { key: 'faq04' },
+  { key: 'faq05' },
+  { key: 'faq06' },
+  { key: 'faq07' },
+  { key: 'faq08' }
 ];
 
 const FAQ = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -78,9 +56,9 @@ const FAQ = () => {
     <SectionWrapper id="faq" bg="white">
       <div ref={containerRef} className="max-w-4xl mx-auto">
         <SectionHeading 
-          badge="Knowledge Base"
-          title="Frequently Asked Questions" 
-          subtitle="Everything you need to know about our piloted drone exterior cleaning service."
+          badge={t('faq.badge')}
+          title={t('faq.title')} 
+          subtitle={t('faq.subtitle')}
           className="mb-16" 
         />
         
@@ -99,7 +77,7 @@ const FAQ = () => {
                   aria-expanded={isOpen}
                 >
                   <span className={`text-[19px] font-bold pr-8 transition-colors duration-300 ${isOpen ? 'text-blue-accent' : 'text-dark'}`}>
-                    {faq.question}
+                    {t(`faq.items.${faq.key}.q`)}
                   </span>
                   
                   {/* Plus/Minus Icon */}
@@ -116,7 +94,7 @@ const FAQ = () => {
                 >
                   <div className="overflow-hidden px-8">
                     <p className="text-dark/70 text-lg font-light leading-relaxed pt-2">
-                      {faq.answer}
+                      {t(`faq.items.${faq.key}.a`)}
                     </p>
                   </div>
                 </div>

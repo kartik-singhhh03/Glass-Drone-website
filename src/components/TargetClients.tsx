@@ -1,19 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import SectionHeading from './ui/SectionHeading';
 
 const clients = [
   // COL 1
   {
-    title: 'Office Buildings',
-    description: 'High-rise and corporate spaces cleaned efficiently with zero disruption.',
+    key: 'client01',
     image: 'https://images.pexels.com/photos/18710790/pexels-photo-18710790.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[480px] h-[360px]',
     delay: 0,
     col: 1
   },
   {
-    title: 'Residential Complexes',
-    description: 'Quiet and precise operation for premium residential environments.',
+    key: 'client02',
     image: 'https://images.pexels.com/photos/15021809/pexels-photo-15021809.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[340px] h-[360px]',
     delay: 0.3,
@@ -21,16 +20,14 @@ const clients = [
   },
   // COL 2
   {
-    title: 'Hotels & Resorts',
-    description: 'Elevate guest experiences with pristine glass and spotless facades.',
+    key: 'client03',
     image: 'https://images.pexels.com/photos/17619969/pexels-photo-17619969.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[340px] h-[360px]',
     delay: 0.1,
     col: 2
   },
   {
-    title: 'Industrial Facilities',
-    description: 'Safely tackle enormous surfaces and complex engineering challenges.',
+    key: 'client04',
     image: 'https://images.pexels.com/photos/2224898/pexels-photo-2224898.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[480px] h-[360px]',
     delay: 0.4,
@@ -38,16 +35,14 @@ const clients = [
   },
   // COL 3
   {
-    title: 'Shopping Centers',
-    description: 'Maintain crystal-clear storefronts ensuring brilliant retail visibility.',
+    key: 'client05',
     image: 'https://images.pexels.com/photos/16133567/pexels-photo-16133567.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[420px] h-[360px]',
     delay: 0.2,
     col: 3
   },
   {
-    title: 'Modern Glass Structures',
-    description: 'Specialized soft-wash drone care for delicate architectural glass.',
+    key: 'client06',
     image: 'https://images.pexels.com/photos/5253207/pexels-photo-5253207.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[400px] h-[360px]',
     delay: 0.5,
@@ -56,6 +51,7 @@ const clients = [
 ];
 
 const TargetClients = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -86,7 +82,7 @@ const TargetClients = () => {
 
   const renderCard = (client: typeof clients[0]) => (
     <div 
-      key={client.title}
+      key={client.key}
       className="w-full"
       style={{
         opacity: 0,
@@ -96,7 +92,7 @@ const TargetClients = () => {
       <div className={`target-card relative w-full rounded-[24px] overflow-hidden bg-white cursor-crosshair group ${client.heightClass}`}>
         <img 
           src={client.image} 
-          alt={client.title}
+          alt={t(`target.items.${client.key}.title`)}
           onError={(e) => { e.currentTarget.src = "/commercial.png"; }}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
@@ -108,10 +104,10 @@ const TargetClients = () => {
         />
         <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 pointer-events-none z-10">
           <h3 className="text-[22px] md:text-[24px] font-bold text-[#0f172a] mb-2 leading-tight">
-            {client.title}
+            {t(`target.items.${client.key}.title`)}
           </h3>
           <p className="text-[15px] font-medium text-[#64748b] leading-relaxed">
-            {client.description}
+            {t(`target.items.${client.key}.desc`)}
           </p>
         </div>
       </div>
@@ -127,9 +123,9 @@ const TargetClients = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div ref={containerRef}>
           <SectionHeading
-            badge="Global Reach"
-            title="Who We Serve"
-            subtitle="Engineered to adapt across any industry, our autonomous cleaning systems guarantee rapid deployment and spot-free finishes."
+            badge={t('target.badge')}
+            title={t('target.title')}
+            subtitle={t('target.subtitle')}
           />
         </div>
 

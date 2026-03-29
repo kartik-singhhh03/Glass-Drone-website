@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "Home": "Home",
+    "Services": "Services",
+    "How It Works": "How It Works",
+    "Projects": "Projects",
+    "Safety": "Safety",
+    "FAQ": "FAQ",
+    "Contact": "Contact",
+    "Get a Quote": "Get a Quote"
+  },
+  "hero": {
+    "title_part1": "Drone Window Cleaning for ",
+    "title_highlight": "High-Rise",
+    "title_part2": " Buildings",
+    "subtitle": "A safer, faster, and more cost-efficient way to clean glass façades and hard-to-reach surfaces.",
+    "areas": "Serving residential, commercial, and government buildings across Estonia, expanding to Baltics and Scandinavia.",
+    "get_quote": "Get a Quote",
+    "watch_demo": "Watch Demo",
+    "contact_us": "Contact Us",
+    "chat_whatsapp": "Chat on WhatsApp"
+  },
+  "whatsapp": {
+    "chat_with_us": "Chat with us"
+  },
+  "services": {
+    "badge": "What We Do",
+    "title": "Elevated Cleaning Solutions",
+    "subtitle": "Premium drone technology perfectly scaled to every architectural challenge.",
+    "core_benefit": "Core Benefit",
+    "items": {
+      "service01": {
+        "title": "High-Rise Exterior Cleaning",
+        "desc": "Clean tall buildings efficiently without the risk of costly scaffolding or workers at height. Our C20 drone, piloted by a certified remote pilot, handles every floor with precision and care.",
+        "benefit": "Safer, faster, and more cost-efficient than traditional methods",
+        "tag": "Service 01"
+      },
+      "service02": {
+        "title": "Glass Façade Maintenance",
+        "desc": "Maintain pristine, streak-free building exteriors using advanced precision spraying technology. Each pass is calibrated for optical clarity and material safety.",
+        "benefit": "Improve building value and occupant experience",
+        "tag": "Service 02"
+      },
+      "service03": {
+        "title": "Hard-To-Reach Surfaces",
+        "desc": "Effortlessly clean architectural features, curves, and overhangs inaccessible by traditional crane baskets. The drone navigates complex geometry safely under full pilot control.",
+        "benefit": "Zero manual risk or expensive mechanical lifts",
+        "tag": "Service 03"
+      },
+      "service04": {
+        "title": "Scheduled Maintenance",
+        "desc": "Regular cleaning visits ensuring your building maintains a flawless look year-round. Each operation is professionally planned, executed by a certified remote pilot.",
+        "benefit": "Consistent, budgetable property management",
+        "tag": "Service 04"
+      },
+      "service05": {
+        "title": "Custom Cleaning Solutions",
+        "desc": "Tailored chemical treatments and specialised soft-wash protocols for sensitive building materials. Every solution is engineered to your exact façade requirements.",
+        "benefit": "Flexible solutions scaled to your exact facade",
+        "tag": "Service 05"
+      }
+    }
+  },
+  "target": {
+    "badge": "Global Reach",
+    "title": "Who We Serve",
+    "subtitle": "Engineered to adapt across any industry, our autonomous cleaning systems guarantee rapid deployment and spot-free finishes.",
+    "items": {
+      "client01": {
+        "title": "Office Buildings",
+        "desc": "High-rise and corporate spaces cleaned efficiently with zero disruption."
+      },
+      "client02": {
+        "title": "Residential Complexes",
+        "desc": "Quiet and precise operation for premium residential environments."
+      },
+      "client03": {
+        "title": "Hotels & Resorts",
+        "desc": "Elevate guest experiences with pristine glass and spotless facades."
+      },
+      "client04": {
+        "title": "Industrial Facilities",
+        "desc": "Safely tackle enormous surfaces and complex engineering challenges."
+      },
+      "client05": {
+        "title": "Shopping Centers",
+        "desc": "Maintain crystal-clear storefronts ensuring brilliant retail visibility."
+      },
+      "client06": {
+        "title": "Modern Glass Structures",
+        "desc": "Specialized soft-wash drone care for delicate architectural glass."
+      }
+    }
+  },
+  "benefits": {
+    "badge": "Unmatched Value",
+    "title": "Why Choose Drone Cleaning?",
+    "subtitle": "The traditional way is outdated. We bring precision piloted drone technology to building exterior maintenance.",
+    "items": {
+      "benefit01": {
+        "title": "No scaffolding",
+        "desc": "Eliminates heavy equipment rental costs and setup time."
+      },
+      "benefit02": {
+        "title": "Faster cleaning",
+        "desc": "Piloted drone operations accelerate project timelines significantly vs. traditional methods."
+      },
+      "benefit03": {
+        "title": "Increased safety",
+        "desc": "No workers at height. Operations are conducted with full visual line of sight by a certified remote pilot."
+      },
+      "benefit04": {
+        "title": "Minimal disruption",
+        "desc": "Whisper-quiet electric drone ensures your tenants work peacefully."
+      },
+      "benefit05": {
+        "title": "Scalable projects",
+        "desc": "Uniform quality for buildings of all sizes across Estonia, the Baltics, and Scandinavia."
+      },
+      "benefit06": {
+        "title": "Complex structures",
+        "desc": "Effortlessly reach difficult angles and hard-to-access surfaces safely."
+      }
+    }
+  },
+  "safety": {
+    "badge": "Uncompromising Safety",
+    "title": "Safety and Compliance standard.",
+    "subtitle": "Our protocol ensures 100% protection to your property, operations, and the public.",
+    "badges": {
+      "badge01": "PDRA-S01 v1.2 Compliant",
+      "badge02": "Active Insurance Coverage",
+      "badge03": "Certified Remote Pilots",
+      "badge04": "Zero Incident Record"
+    },
+    "items": {
+      "feature01": {
+        "title": "Certified Remote Pilots",
+        "desc": "All operations are conducted by certified remote pilots (RPIC) who maintain full visual line of sight at all times."
+      },
+      "feature02": {
+        "title": "Active Insurance Coverage",
+        "desc": "All operations are covered by an active insurance policy, providing comprehensive protection for your property."
+      },
+      "feature03": {
+        "title": "Regulatory Compliance",
+        "desc": "PDRA-S01 v1.2 compliant operations – operational authorisation OT_264_K1 issued by the Estonian Transport Administration."
+      },
+      "feature04": {
+        "title": "Pre-Flight Risk Assessments",
+        "desc": "A thorough operational risk assessment is conducted before every project to ensure safe and compliant execution."
+      },
+      "feature05": {
+        "title": "Weather Monitoring",
+        "desc": "Each project is scheduled based on real-time meteorological monitoring. Operations are grounded if wind or rain exceed safe thresholds."
+      }
+    }
+  },
+  "how": {
+    "badge": "Seamless Process",
+    "title": "How It Works",
+    "subtitle": "A professionally managed 4-step piloted drone cleaning process tailored to your architecture.",
+    "items": {
+      "step01": {
+        "title": "Building Assessment",
+        "desc": "We utilise satellite mapping and site visits to accurately plot dimensions and logistics."
+      },
+      "step02": {
+        "title": "Cleaning Plan",
+        "desc": "Engineering precise drone flight paths and establishing strict ground perimeters in line with PDRA-S01 requirements."
+      },
+      "step03": {
+        "title": "Drone Cleaning",
+        "desc": "The C20 drone is piloted by a certified remote pilot (RPIC) in full visual line of sight, applying high-pressure mist to wash façades safely."
+      },
+      "step04": {
+        "title": "Results Delivery",
+        "desc": "Total documentation, high-res before/after imaging, and scheduling of future maintenance routines."
+      }
+    }
+  },
+  "projects": {
+    "badge": "Coming Soon",
+    "title": "Our Projects",
+    "subtitle": "We are preparing to launch our first drone cleaning operations in 2026.",
+    "launching": "Launching 2026",
+    "feature": "High-Rise Exterior Cleaning",
+    "card_title": "First projects launching in 2026",
+    "card_desc": "Contact us to be among the first to experience precision piloted drone cleaning for your building. We are actively onboarding clients for our inaugural season.",
+    "card_highlight": "Reach out today to secure your spot and receive a personalised quote.",
+    "btn": "Get in Touch"
+  },
+  "pricing": {
+    "badge": "Value Engineered",
+    "title": "How Pricing Works",
+    "subtitle": "Drone cleaning completely eliminates baseline scaffolding costs. Each final quote is highly customized around six core variables.",
+    "items": {
+      "factor01": {
+        "title": "Building Height",
+        "desc": "Extremely tall elevations require specialized tether matrices and optimized fluid pressure regulation."
+      },
+      "factor02": {
+        "title": "Surface Area",
+        "desc": "Total square footage of the glass facade dictates total flight time & the number of drones deployed."
+      },
+      "factor03": {
+        "title": "Accessibility",
+        "desc": "Complex architectural overhangs and limited ground-space perimeters affect the initial setup time."
+      },
+      "factor04": {
+        "title": "Level of Soil",
+        "desc": "Heavy atmospheric buildup may require specialized soft-brushes or multiple pre-treatment washing passes."
+      },
+      "factor05": {
+        "title": "Frequency",
+        "desc": "Ongoing maintenance contracts are significantly discounted compared to massive one-off restoration washes."
+      },
+      "factor06": {
+        "title": "Location",
+        "desc": "Local aviation permitting requirements, airspace class restrictions, and transport logistics."
+      }
+    },
+    "cta": {
+      "title": "Ready for your exact numbers?",
+      "desc": "Eliminate the guesswork. We use satellite mapping to instantly calculate 90% of your quote before we even talk.",
+      "btn": "Send your building details for a fast estimate"
+    }
+  },
+  "faq": {
+    "badge": "Knowledge Base",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our piloted drone exterior cleaning service.",
+    "items": {
+      "faq01": {
+        "q": "Is drone cleaning safe?",
+        "a": "Yes. The drone is piloted in full visual line of sight by a certified remote pilot at all times. This eliminates the need for workers on scaffolding or at height. Each operation follows strict safety procedures, including pre-flight checks and controlled flight paths to ensure safety for both the property and surrounding environment."
+      },
+      "faq02": {
+        "q": "What building heights are supported?",
+        "a": "Our system is designed for high-rise buildings and can operate efficiently across a wide range of heights. Operations are planned based on site conditions and safety regulations, ensuring optimal coverage and safe execution."
+      },
+      "faq03": {
+        "q": "Does weather affect operations?",
+        "a": "Yes. For safe and effective cleaning, operations require suitable weather conditions, including low wind speeds and no heavy precipitation. Each project is scheduled based on real-time weather monitoring to ensure optimal results."
+      },
+      "faq04": {
+        "q": "How does the drone cleaning system work?",
+        "a": "The drone is equipped with a pressure washing system and operates at a safe distance from the building (typically 5 meters or more). A water hose runs from the ground to the drone, supplying continuous flow. We use deionised water to ensure a spotless, streak-free finish after drying. For heavily soiled surfaces, a specialised cleaning foam is applied before rinsing."
+      },
+      "faq05": {
+        "q": "Is it suitable for all glass types?",
+        "a": "Yes. We utilise a precisely calibrated low-pressure spray system. It is entirely safe for all exterior architectural glass, including tinted, coated, reflective, or delicate panes."
+      },
+      "faq06": {
+        "q": "Are permits required?",
+        "a": "We handle all aviation compliance on our end. Our operations are conducted under PDRA-S01 v1.2 compliant procedures with operational authorisation OT_264_K1 issued by the Estonian Transport Administration."
+      },
+      "faq07": {
+        "q": "How long does cleaning take?",
+        "a": "Piloted drone operations are significantly faster than traditional methods. A commercial building that traditionally takes a rope-access crew over two weeks can often be completed in a fraction of the time, with far less disruption to tenants or the surrounding area."
+      },
+      "faq08": {
+        "q": "Do you offer recurring service?",
+        "a": "Yes. Most commercial and residential clients choose a quarterly or bi-annual maintenance schedule to keep their properties pristine year-round. Contact us to discuss a tailored maintenance plan."
+      }
+    }
+  },
+  "footer": {
+    "cta_title": "Ready to transform your building maintenance?",
+    "cta_desc": "Get a customized drone cleaning plan perfectly scaled to your architecture.",
+    "cta_btn": "Get a Free Quote",
+    "prefer_chat": "Prefer quick chat?",
+    "talk_instantly": "Talk to us instantly",
+    "desc": "Advanced drone-powered exterior cleaning solutions designed for safety, efficiency, and architectural scale.",
+    "nav_title": "Navigation",
+    "company_title": "Company",
+    "contact_title": "Contact Us",
+    "call_us": "Call Us",
+    "email": "Email",
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "how": "How It Works",
+      "projects": "Projects",
+      "safety": "Safety Standard",
+      "faq": "FAQ",
+      "careers": "Careers",
+      "contact": "Contact Us"
+    }
+  },
+  "contact": {
+    "badge": "Ready to start?",
+    "title": "Get an Exact Quote",
+    "subtitle": "Fill out your property details below. Our team maps your building using satellite data and provides an accurate estimate rapidly.",
+    "call_us": "Call Us Directly",
+    "available_time": "Available Mon-Fri, 9am - 6pm",
+    "email_us": "Email Us",
+    "instant_response": "Instant response",
+    "start_chat": "Start Chat",
+    "service_area": "Service Area",
+    "service_area_desc": "Estonia, Baltics & Scandinavia",
+    "form_title": "Property Details",
+    "form_name": "Full Name",
+    "form_name_placeholder": "Jane Doe",
+    "form_message": "Project Description & Requirements",
+    "form_message_placeholder": "E.g. 15-story residential building, roughly 200 windows.",
+    "form_sending": "Sending…",
+    "form_sent": "✓ Sent!",
+    "submit_btn": "Submit Project Details"
+  },
+  "slider": {
+    "before": "Before",
+    "after": "After"
+  }
+}

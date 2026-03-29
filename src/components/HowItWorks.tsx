@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { useTranslation } from 'react-i18next';
 import SectionHeading from './ui/SectionHeading';
 
 if (typeof window !== 'undefined') {
@@ -9,22 +10,10 @@ if (typeof window !== 'undefined') {
 }
 
 const steps = [
-  {
-    title: 'Building Assessment',
-    description: 'We utilise satellite mapping and site visits to accurately plot dimensions and logistics.'
-  },
-  {
-    title: 'Cleaning Plan',
-    description: 'Engineering precise drone flight paths and establishing strict ground perimeters in line with PDRA-S01 requirements.'
-  },
-  {
-    title: 'Drone Cleaning',
-    description: 'The C20 drone is piloted by a certified remote pilot (RPIC) in full visual line of sight, applying high-pressure mist to wash façades safely.'
-  },
-  {
-    title: 'Results Delivery',
-    description: 'Total documentation, high-res before/after imaging, and scheduling of future maintenance routines.'
-  }
+  { key: 'step01' },
+  { key: 'step02' },
+  { key: 'step03' },
+  { key: 'step04' }
 ];
 
 // Spatially mapped precise nodes pushing text strictly outwards resolving any collision paths
@@ -36,6 +25,7 @@ const desktopNodes = [
 ];
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
   const [activeStep, setActiveStep] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -140,9 +130,9 @@ const HowItWorks = () => {
         {/* Title Block isolated cleanly to seamlessly scroll past as the container pins */}
         <div className="w-full text-center max-w-[800px] mx-auto mb-12 flex-shrink-0">
           <SectionHeading
-            badge="Seamless Process"
-            title="How It Works"
-            subtitle="A professionally managed 4-step piloted drone cleaning process tailored to your architecture."
+            badge={t('how.badge')}
+            title={t('how.title')}
+            subtitle={t('how.subtitle')}
             className="mb-0 mx-auto"
           />
         </div>
@@ -190,8 +180,8 @@ const HowItWorks = () => {
                 {/* Absolute Floating Content Box isolated gracefully above and below the line */}
                 <div className={`absolute ${node.posOpts} ${node.textAlign} transition-all duration-700 pointer-events-none 
                     ${isPassed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                  <h3 className="text-[22px] font-bold text-slate-900 mb-3 leading-tight tracking-tight shadow-white drop-shadow-md">{step.title}</h3>
-                  <p className="text-[15px] text-slate-600 leading-[1.7] font-medium">{step.description}</p>
+                  <h3 className="text-[22px] font-bold text-slate-900 mb-3 leading-tight tracking-tight shadow-white drop-shadow-md">{t(`how.items.${step.key}.title`)}</h3>
+                  <p className="text-[15px] text-slate-600 leading-[1.7] font-medium">{t(`how.items.${step.key}.desc`)}</p>
                 </div>
               </div>
             );
@@ -236,8 +226,8 @@ const HowItWorks = () => {
                 {/* Content Block */}
                 <div className={`transition-all duration-700 bg-white/50 py-2
                     ${isPassed ? 'opacity-100 translate-y-0' : 'opacity-30 translate-y-4'}`}>
-                  <h3 className="text-[22px] font-bold text-slate-900 mb-2 leading-[1.3] tracking-tight">{step.title}</h3>
-                  <p className="text-[15px] sm:text-[16px] text-slate-500 leading-[1.7] max-w-[320px] font-medium">{step.description}</p>
+                  <h3 className="text-[22px] font-bold text-slate-900 mb-2 leading-[1.3] tracking-tight">{t(`how.items.${step.key}.title`)}</h3>
+                  <p className="text-[15px] sm:text-[16px] text-slate-500 leading-[1.7] max-w-[320px] font-medium">{t(`how.items.${step.key}.desc`)}</p>
                 </div>
               </div>
             );

@@ -144,3 +144,19 @@
   will-change: transform;
 }
 
+/* i18n Layout Safety Fixes */
+.btn, button, a[class*='px-'] {
+  padding-left: 16px;
+  padding-right: 16px;
+  white-space: nowrap;
+}
+
+.card p, .card h3, p, h3 {
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.section-title, h2 {
+  min-height: 60px;
+}
+

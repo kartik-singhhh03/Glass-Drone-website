@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionWrapper from './ui/SectionWrapper';
 import SectionHeading from './ui/SectionHeading';
 import { Building2, CheckCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +13,7 @@ if (typeof window !== 'undefined') {
 
 
 const CaseStudies = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -63,9 +65,9 @@ const CaseStudies = () => {
       <div ref={sectionRef} className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <SectionHeading 
-            badge="Coming Soon"
-            title="Our Projects"
-            subtitle="We are preparing to launch our first drone cleaning operations in 2026."
+            badge={t('projects.badge')}
+            title={t('projects.title')}
+            subtitle={t('projects.subtitle')}
             align="left"
             className="mb-0"
           />
@@ -84,7 +86,7 @@ const CaseStudies = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
                 <span className="text-white font-semibold text-sm tracking-widest uppercase bg-blue-accent/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                  Launching 2026
+                  {t('projects.launching')}
                 </span>
               </div>
             </div>
@@ -93,18 +95,18 @@ const CaseStudies = () => {
             <div className="w-full lg:w-1/2 flex flex-col justify-center">
               <div className="flex items-center gap-2 mb-6 text-blue-accent font-medium bg-blue-accent/10 w-max px-4 py-2 rounded-lg">
                 <Building2 size={18} />
-                <span>High-Rise Exterior Cleaning</span>
+                <span>{t('projects.feature')}</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-dark mb-4 leading-tight">
-                First projects launching in 2026
+                {t('projects.card_title')}
               </h3>
               <p className="text-dark/70 font-light leading-relaxed text-lg mb-8">
-                Contact us to be among the first to experience precision piloted drone cleaning for your building. We are actively onboarding clients for our inaugural season.
+                {t('projects.card_desc')}
               </p>
               <div className="flex items-center gap-3 bg-blue-accent/5 border border-blue-accent/20 rounded-2xl p-5">
                 <CheckCircle size={22} className="text-blue-accent flex-shrink-0" />
                 <p className="text-dark/80 font-medium">
-                  Reach out today to secure your spot and receive a personalised quote.
+                  {t('projects.card_highlight')}
                 </p>
               </div>
             </div>
@@ -116,7 +118,7 @@ const CaseStudies = () => {
             href="#contact"
             className="inline-flex items-center gap-2 bg-blue-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-accent/90 transition-all duration-300 shadow-lg shadow-blue-accent/20 hover:-translate-y-1"
           >
-            Get in Touch
+            {t('projects.btn')}
           </a>
         </div>
 

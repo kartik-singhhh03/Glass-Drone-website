@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Sparkles, Focus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Button from './ui/Button';
 
 if (typeof window !== 'undefined') {
@@ -10,48 +11,34 @@ if (typeof window !== 'undefined') {
 
 const services = [
   {
-    title: 'High-Rise Exterior Cleaning',
-    description:
-      'Clean tall buildings efficiently without the risk of costly scaffolding or workers at height. Our C20 drone, piloted by a certified remote pilot, handles every floor with precision and care.',
-    benefit: 'Safer, faster, and more cost-efficient than traditional methods',
+    key: 'service01',
     image: '/HIGH-RISE CLEANING.jpg',
     tag: 'Service 01',
   },
   {
-    title: 'Glass Façade Maintenance',
-    description:
-      'Maintain pristine, streak-free building exteriors using advanced precision spraying technology. Each pass is calibrated for optical clarity and material safety.',
-    benefit: 'Improve building value and occupant experience',
+    key: 'service02',
     image: '/GLASS FAÇADE MAINTENANCE.png',
     tag: 'Service 02',
   },
   {
-    title: 'Hard-To-Reach Surfaces',
-    description:
-      'Effortlessly clean architectural features, curves, and overhangs inaccessible by traditional crane baskets. The drone navigates complex geometry safely under full pilot control.',
-    benefit: 'Zero manual risk or expensive mechanical lifts',
+    key: 'service03',
     image: '/HARD-TO-REACH SURFACES.png',
     tag: 'Service 03',
   },
   {
-    title: 'Scheduled Maintenance',
-    description:
-      'Regular cleaning visits ensuring your building maintains a flawless look year-round. Each operation is professionally planned, executed by a certified remote pilot.',
-    benefit: 'Consistent, budgetable property management',
+    key: 'service04',
     image: '/SCHEDULED MAINTENANCE.png',
     tag: 'Service 04',
   },
   {
-    title: 'Custom Cleaning Solutions',
-    description:
-      'Tailored chemical treatments and specialised soft-wash protocols for sensitive building materials. Every solution is engineered to your exact façade requirements.',
-    benefit: 'Flexible solutions scaled to your exact facade',
+    key: 'service05',
     image: '/hero_drone.png',
     tag: 'Service 05',
   },
 ];
 
 const Services = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -126,14 +113,14 @@ const Services = () => {
           <div className="inline-flex items-center gap-2 bg-white border border-blue-accent/20 rounded-full px-4 py-2 mb-6 shadow-sm">
             <Sparkles size={13} className="text-blue-accent" />
             <span className="text-blue-accent font-semibold tracking-widest uppercase text-[11px]">
-              What We Do
+              {t('services.badge')}
             </span>
           </div>
           <h2 className="text-[38px] md:text-[48px] lg:text-[56px] font-bold text-slate-900 leading-[1.1] tracking-tight">
-            Elevated Cleaning Solutions
+            {t('services.title')}
           </h2>
           <p className="text-slate-500 text-[17px] md:text-[20px] max-w-[640px] mx-auto leading-[1.65] mt-5 font-normal">
-            Premium drone technology perfectly scaled to every architectural challenge.
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -153,7 +140,7 @@ const Services = () => {
                   <div className="w-full md:w-[52%] h-[260px] sm:h-[340px] md:h-auto min-h-[420px] relative overflow-hidden bg-gray-900 flex-shrink-0">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={t(`services.items.${service.key}.title`)}
                       className="service-img w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                       onError={(e) => {
                         e.currentTarget.onerror = null;
@@ -169,7 +156,7 @@ const Services = () => {
                     />
                     {/* Tag pill on image */}
                     <div className="absolute top-5 left-5 bg-black/40 backdrop-blur-sm text-white text-[11px] font-semibold tracking-widest uppercase rounded-full px-4 py-1.5">
-                      {service.tag}
+                      {t(`services.items.${service.key}.tag`)}
                     </div>
                   </div>
 
@@ -179,11 +166,11 @@ const Services = () => {
                     <div className="w-10 h-[3px] bg-blue-accent rounded-full mb-7" />
 
                     <h3 className="text-[26px] md:text-[30px] xl:text-[34px] font-bold text-slate-900 mb-4 leading-[1.18] tracking-tight">
-                      {service.title}
+                      {t(`services.items.${service.key}.title`)}
                     </h3>
 
                     <p className="text-[15px] md:text-[16px] text-slate-500 mb-7 leading-[1.75] max-w-[440px] font-normal">
-                      {service.description}
+                      {t(`services.items.${service.key}.desc`)}
                     </p>
 
                     {/* Benefit callout */}
@@ -191,10 +178,10 @@ const Services = () => {
                       <Focus className="text-blue-accent flex-shrink-0 mt-0.5" size={20} />
                       <div>
                         <span className="block font-semibold text-slate-800 text-[12px] uppercase tracking-wider mb-1">
-                          Core Benefit
+                          {t('services.core_benefit')}
                         </span>
                         <span className="text-slate-500 text-[14px] leading-relaxed">
-                          {service.benefit}
+                          {t(`services.items.${service.key}.benefit`)}
                         </span>
                       </div>
                     </div>
@@ -203,7 +190,7 @@ const Services = () => {
                       variant="outline"
                       className="w-max group/btn shadow-sm border-gray-200 hover:border-blue-accent hover:bg-transparent px-7 py-3.5"
                     >
-                      <span className="mr-3 font-semibold text-[14px]">Get a Quote</span>
+                      <span className="mr-3 font-semibold text-[14px]">{t('nav.Get a Quote')}</span>
                       <ArrowRight
                         size={17}
                         className="transform group-hover/btn:translate-x-1.5 transition-transform text-blue-accent"

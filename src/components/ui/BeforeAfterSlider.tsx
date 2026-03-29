@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface BeforeAfterSliderProps {
   image: string;
@@ -6,6 +7,7 @@ interface BeforeAfterSliderProps {
 }
 
 const BeforeAfterSlider = ({ image, className = '' }: BeforeAfterSliderProps) => {
+  const { t } = useTranslation();
   const [position, setPosition] = useState(50);
 
   const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
@@ -48,8 +50,8 @@ const BeforeAfterSlider = ({ image, className = '' }: BeforeAfterSliderProps) =>
         </div>
       </div>
       
-      <div className="absolute top-6 left-6 bg-dark/60 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider z-20 pointer-events-none">Before</div>
-      <div className="absolute top-6 right-6 bg-blue-accent/90 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider z-20 pointer-events-none">After</div>
+      <div className="absolute top-6 left-6 bg-dark/60 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider z-20 pointer-events-none">{t('slider.before')}</div>
+      <div className="absolute top-6 right-6 bg-blue-accent/90 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider z-20 pointer-events-none">{t('slider.after')}</div>
     </div>
   );
 };

@@ -1,40 +1,36 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import SectionHeading from './ui/SectionHeading';
 
 const benefits = [
   {
-    title: 'No scaffolding',
-    description: 'Eliminates heavy equipment rental costs and setup time.',
+    key: 'benefit01',
     image: '/high-rise.png'
   },
   {
-    title: 'Faster cleaning',
-    description: 'Piloted drone operations accelerate project timelines significantly vs. traditional methods.',
+    key: 'benefit02',
     image: 'https://images.pexels.com/photos/2096578/pexels-photo-2096578.jpeg?auto=compress&cs=tinysrgb&w=1280'
   },
   {
-    title: 'Increased safety',
-    description: 'No workers at height. Operations are conducted with full visual line of sight by a certified remote pilot.',
+    key: 'benefit03',
     image: '/safety.png'
   },
   {
-    title: 'Minimal disruption',
-    description: 'Whisper-quiet electric drone ensures your tenants work peacefully.',
+    key: 'benefit04',
     image: '/minimal-disruption.png'
   },
   {
-    title: 'Scalable projects',
-    description: 'Uniform quality for buildings of all sizes across Estonia, the Baltics, and Scandinavia.',
+    key: 'benefit05',
     image: '/scalable.png'
   },
   {
-    title: 'Complex structures',
-    description: 'Effortlessly reach difficult angles and hard-to-access surfaces safely.',
+    key: 'benefit06',
     image: '/commercial.png'
   }
 ];
 
 const Benefits = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(2);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -68,9 +64,9 @@ const Benefits = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div ref={containerRef}>
           <SectionHeading
-            badge="Unmatched Value"
-            title="Why Choose Drone Cleaning?"
-            subtitle="The traditional way is outdated. We bring precision piloted drone technology to building exterior maintenance."
+            badge={t('benefits.badge')}
+            title={t('benefits.title')}
+            subtitle={t('benefits.subtitle')}
           />
         </div>
 
@@ -136,7 +132,7 @@ const Benefits = () => {
                     <div className="w-full h-[55%] relative overflow-hidden bg-gray-100">
                       <img
                         src={benefit.image}
-                        alt={benefit.title}
+                        alt={t(`benefits.items.${benefit.key}.title`)}
                         onError={(e) => { e.currentTarget.src = "/hero_drone.png"; }}
                         className="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-105"
                       />
@@ -146,10 +142,10 @@ const Benefits = () => {
                     </div>
                     <div className="p-6 flex flex-col flex-grow bg-white relative z-10 border-t border-gray-50">
                       <h3 className="text-[20px] font-semibold text-slate-800 tracking-wide mb-2">
-                        {benefit.title}
+                        {t(`benefits.items.${benefit.key}.title`)}
                       </h3>
                       <p className="text-[14px] font-light leading-relaxed text-slate-600">
-                        {benefit.description}
+                        {t(`benefits.items.${benefit.key}.desc`)}
                       </p>
                     </div>
                   </div>

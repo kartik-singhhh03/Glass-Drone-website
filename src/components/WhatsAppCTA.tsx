@@ -1,4 +1,5 @@
 import { Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
   <svg
@@ -14,6 +15,8 @@ const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const WhatsAppCTA = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 pointer-events-none">
       
@@ -34,7 +37,7 @@ const WhatsAppCTA = () => {
         {/* Tooltip */}
         <div className="absolute right-full top-1/2 -translate-y-1/2 mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
           <div className="bg-dark text-white text-sm font-medium py-1.5 px-3 rounded-lg shadow-xl relative">
-            Chat with us
+            {t('whatsapp.chat_with_us')}
             <div className="absolute top-1/2 -right-1 -translate-y-1/2 border-[5px] border-transparent border-l-dark w-0 h-0"></div>
           </div>
         </div>
