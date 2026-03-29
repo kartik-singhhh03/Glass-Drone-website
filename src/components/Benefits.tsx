@@ -5,7 +5,7 @@ import SectionHeading from './ui/SectionHeading';
 const benefits = [
   {
     key: 'benefit01',
-    image: '/high-rise.png'
+    image: '/high-rise.webp'
   },
   {
     key: 'benefit02',
@@ -13,19 +13,19 @@ const benefits = [
   },
   {
     key: 'benefit03',
-    image: '/safety.png'
+    image: '/safety.webp'
   },
   {
     key: 'benefit04',
-    image: '/minimal-disruption.png'
+    image: '/minimal-disruption.webp'
   },
   {
     key: 'benefit05',
-    image: '/scalable.png'
+    image: '/scalable.webp'
   },
   {
     key: 'benefit06',
-    image: '/commercial.png'
+    image: '/commercial.webp'
   }
 ];
 
@@ -133,7 +133,7 @@ const Benefits = () => {
                       <img
                         src={benefit.image}
                         alt={t(`benefits.items.${benefit.key}.title`)}
-                        onError={(e) => { e.currentTarget.src = "/hero_drone.png"; }}
+                        onError={(e) => { e.currentTarget.src = "/hero_drone.webp"; }}
                         className="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-105"
                       />
                       {offset === 0 && (

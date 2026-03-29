@@ -1,16 +1,28 @@
-import { useState } from 'react';
-import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
-import SectionWrapper from './ui/SectionWrapper';
-import SectionHeading from './ui/SectionHeading';
-import Button from './ui/Button';
-import { useTranslation } from 'react-i18next';
+import { useState } from "react";
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
+import SectionWrapper from "./ui/SectionWrapper";
+import SectionHeading from "./ui/SectionHeading";
+import Button from "./ui/Button";
+import { useTranslation } from "react-i18next";
 
-const FORMSPREE_URL = 'https://formspree.io/f/xnjopvzj';
+const FORMSPREE_URL = "https://formspree.io/f/xnjopvzj";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('Please fill in all required fields (*) or try again.');
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [errorMsg, setErrorMsg] = useState(
+    "Please fill in all required fields (*) or try again.",
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,37 +30,43 @@ const Contact = () => {
     const formData = new FormData(form);
 
     // Basic validation
-    const name = (formData.get('name') as string)?.trim();
-    const email = (formData.get('email') as string)?.trim();
-    const message = (formData.get('message') as string)?.trim();
-    
+    const name = (formData.get("name") as string)?.trim();
+    const email = (formData.get("email") as string)?.trim();
+    const message = (formData.get("message") as string)?.trim();
+
     if (!name || !email || !message) {
-      setStatus('error');
-      setErrorMsg('Please fill in all required fields: Name, Email, and Project Description.');
+      setStatus("error");
+      setErrorMsg(
+        "Please fill in all required fields: Name, Email, and Project Description.",
+      );
       return;
     }
 
-
-    setStatus('sending');
+    setStatus("sending");
 
     try {
       const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
+        method: "POST",
         body: formData,
-        headers: { Accept: 'application/json' },
+        headers: { Accept: "application/json" },
       });
 
       if (res.ok) {
-        setStatus('success');
+        setStatus("success");
         form.reset();
       } else {
         const data = await res.json().catch(() => ({}));
-        setStatus('error');
-        setErrorMsg(data?.errors?.[0]?.message || `Submission failed (${res.status}). Please try again.`);
+        setStatus("error");
+        setErrorMsg(
+          data?.errors?.[0]?.message ||
+            `Submission failed (${res.status}). Please try again.`,
+        );
       }
     } catch (err) {
-      setStatus('error');
-      setErrorMsg('Network error — please check your connection and try again.');
+      setStatus("error");
+      setErrorMsg(
+        "Network error — please check your connection and try again.",
+      );
     }
   };
 
@@ -134,32 +152,34 @@ const Contact = () => {
       <div
         className="absolute inset-0 pointer-events-none z-0"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(0,172,206,0.06) 0%, transparent 70%)',
+          background:
+            "radial-gradient(ellipse at center, rgba(0,172,206,0.06) 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute inset-0 pointer-events-none z-0"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0,172,206,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,172,206,0.05) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
-          maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)',
+          backgroundImage:
+            "linear-gradient(rgba(0,172,206,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,172,206,0.05) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+          maskImage:
+            "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%)",
         }}
       />
 
       <SectionHeading
-        badge={t('contact.badge')}
-        title={t('contact.title')}
-        subtitle={t('contact.subtitle')}
+        badge={t("contact.badge")}
+        title={t("contact.title")}
+        subtitle={t("contact.subtitle")}
         className="mb-16 relative z-10"
       />
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 relative z-10">
-
         {/* Contact Info Sidebar */}
         <div className="w-full lg:w-5/12">
           <div className="space-y-6 lg:space-y-10 w-full lg:sticky lg:top-32">
-
             <div className="contact-card p-8 md:p-10 flex items-start gap-6 group">
               <div className="contact-card-bg">
                 <div className="contact-card-glow"></div>
@@ -170,9 +190,15 @@ const Contact = () => {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">{t('contact.call_us')}</p>
-                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors">+372 550 3644</p>
-                  <p className="text-dark/60 text-sm mt-1">{t('contact.available_time')}</p>
+                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">
+                    {t("contact.call_us")}
+                  </p>
+                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors">
+                    +372 550 3644
+                  </p>
+                  <p className="text-dark/60 text-sm mt-1">
+                    {t("contact.available_time")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -187,8 +213,12 @@ const Contact = () => {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">{t('contact.email_us')}</p>
-                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">info@glassdrone.ee</p>
+                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">
+                    {t("contact.email_us")}
+                  </p>
+                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">
+                    info@glassdrone.ee
+                  </p>
                 </div>
               </div>
             </div>
@@ -200,14 +230,31 @@ const Contact = () => {
               </div>
               <div className="contact-card-content flex items-start gap-6 w-full">
                 <div className="w-14 h-14 rounded-2xl bg-blue-accent/10 flex items-center justify-center text-blue-accent flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.81 11.81 0 0 0 12.05 0C5.495 0 .16 5.333.158 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.332 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z"/>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.81 11.81 0 0 0 12.05 0C5.495 0 .16 5.333.158 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.332 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">WhatsApp</p>
-                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">{t('contact.instant_response')}</p>
-                  <a href="https://wa.me/3725503644" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-sm font-semibold text-blue-accent border-b border-blue-accent/30 hover:border-blue-accent pb-0.5 transition-colors">{t('contact.start_chat')} →</a>
+                  <p className="text-dark/50 text-xs font-bold uppercase tracking-wider mb-2">
+                    WhatsApp
+                  </p>
+                  <p className="text-dark font-bold text-xl md:text-2xl hover:text-blue-accent cursor-pointer transition-colors w-max">
+                    {t("contact.instant_response")}
+                  </p>
+                  <a
+                    href="https://wa.me/3725503644"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-sm font-semibold text-blue-accent border-b border-blue-accent/30 hover:border-blue-accent pb-0.5 transition-colors"
+                  >
+                    {t("contact.start_chat")} →
+                  </a>
                 </div>
               </div>
             </div>
@@ -220,8 +267,12 @@ const Contact = () => {
                 </div>
                 <div className="contact-card-content flex flex-col items-center w-full">
                   <MapPin className="text-blue-accent mb-3" size={28} />
-                  <p className="text-dark font-bold mb-1">{t('contact.service_area')}</p>
-                  <p className="text-dark/60 text-sm leading-relaxed">{t('contact.service_area_desc')}</p>
+                  <p className="text-dark font-bold mb-1">
+                    {t("contact.service_area")}
+                  </p>
+                  <p className="text-dark/60 text-sm leading-relaxed">
+                    {t("contact.service_area_desc")}
+                  </p>
                 </div>
               </div>
 
@@ -233,11 +284,12 @@ const Contact = () => {
                 <div className="contact-card-content flex flex-col items-center w-full">
                   <Clock className="text-blue-accent mb-3" size={28} />
                   <p className="text-dark font-bold mb-1">Response Time</p>
-                  <p className="text-dark/60 text-sm leading-relaxed">Usually within 24 hours</p>
+                  <p className="text-dark/60 text-sm leading-relaxed">
+                    Usually within 24 hours
+                  </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -250,29 +302,56 @@ const Contact = () => {
             </div>
 
             <div className="contact-card-content w-full">
-              <h3 className="text-2xl font-bold text-dark mb-8">{t('contact.form_title')}</h3>
+              <h3 className="text-2xl font-bold text-dark mb-8">
+                {t("contact.form_title")}
+              </h3>
 
-              <form action={FORMSPREE_URL} method="POST" className="flex flex-col gap-6" onSubmit={handleSubmit}>
-
+              <form
+                action={FORMSPREE_URL}
+                method="POST"
+                className="flex flex-col gap-6"
+                onSubmit={handleSubmit}
+              >
                 {/* Honeypot spam trap — invisible to real users, bots will fill it */}
-                <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                <input
+                  type="text"
+                  name="_honey"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label className="text-dark font-semibold text-sm ml-1">{t('contact.form_name')} <span className="text-red-400">*</span></label>
+                    <label
+                      htmlFor="contact-name"
+                      className="text-dark font-semibold text-sm ml-1"
+                    >
+                      {t("contact.form_name")}{" "}
+                      <span className="text-red-400">*</span>
+                    </label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
-                      placeholder={t('contact.form_name_placeholder')}
+                      autoComplete="name"
+                      placeholder={t("contact.form_name_placeholder")}
                       required
                       className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none text-dark"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-dark font-semibold text-sm ml-1">Company</label>
+                    <label
+                      htmlFor="contact-company"
+                      className="text-dark font-semibold text-sm ml-1"
+                    >
+                      Company
+                    </label>
                     <input
+                      id="contact-company"
                       type="text"
                       name="company"
+                      autoComplete="organization"
                       placeholder="Acme Properties LLC"
                       className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none text-dark"
                     />
@@ -281,20 +360,34 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label className="text-dark font-semibold text-sm ml-1">Email Address <span className="text-red-400">*</span></label>
+                    <label
+                      htmlFor="contact-email"
+                      className="text-dark font-semibold text-sm ml-1"
+                    >
+                      Email Address <span className="text-red-400">*</span>
+                    </label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
+                      autoComplete="email"
                       placeholder="jane@example.com"
                       required
                       className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none text-dark"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-dark font-semibold text-sm ml-1">Phone Number</label>
+                    <label
+                      htmlFor="contact-phone"
+                      className="text-dark font-semibold text-sm ml-1"
+                    >
+                      Phone Number
+                    </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
+                      autoComplete="tel"
                       placeholder="+372 000 0000"
                       className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none text-dark"
                     />
@@ -302,36 +395,50 @@ const Contact = () => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-dark font-semibold text-sm ml-1">Building Address</label>
+                  <label
+                    htmlFor="contact-address"
+                    className="text-dark font-semibold text-sm ml-1"
+                  >
+                    Building Address
+                  </label>
                   <input
+                    id="contact-address"
                     type="text"
                     name="address"
+                    autoComplete="street-address"
                     placeholder="123 Corporate Blvd, Tallinn, Estonia"
                     className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none text-dark"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-dark font-semibold text-sm ml-1">{t('contact.form_message')} <span className="text-red-400">*</span></label>
+                  <label
+                    htmlFor="contact-message"
+                    className="text-dark font-semibold text-sm ml-1"
+                  >
+                    {t("contact.form_message")}{" "}
+                    <span className="text-red-400">*</span>
+                  </label>
                   <textarea
+                    id="contact-message"
                     name="message"
                     rows={4}
-                    placeholder={t('contact.form_message_placeholder')}
+                    placeholder={t("contact.form_message_placeholder")}
                     required
                     className="w-full px-6 py-4 rounded-xl bg-light border border-transparent focus:bg-white focus:border-blue-accent focus:ring-4 focus:ring-blue-accent/10 transition-all outline-none resize-none text-dark"
                   ></textarea>
                 </div>
 
-
-
                 {/* Success / Error feedback */}
-                {status === 'success' && (
+                {status === "success" && (
                   <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-green-50 border border-green-200 text-green-700">
                     <CheckCircle2 size={20} className="flex-shrink-0" />
-                    <span className="font-medium text-sm">Request sent! We'll get back to you within 24 hours.</span>
+                    <span className="font-medium text-sm">
+                      Request sent! We'll get back to you within 24 hours.
+                    </span>
                   </div>
                 )}
-                {status === 'error' && (
+                {status === "error" && (
                   <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-red-50 border border-red-200 text-red-600">
                     <AlertCircle size={20} className="flex-shrink-0" />
                     <span className="font-medium text-sm">{errorMsg}</span>
@@ -342,19 +449,21 @@ const Contact = () => {
                   variant="primary"
                   size="lg"
                   className="w-full mt-4 flex justify-center items-center gap-3 shadow-xl shadow-blue-accent/20"
-                  disabled={status === 'sending' || status === 'success'}
+                  disabled={status === "sending" || status === "success"}
                 >
-                  {status === 'sending' ? t('contact.form_sending') : status === 'success' ? t('contact.form_sent') : t('contact.submit_btn')}
-                  {status !== 'sending' && status !== 'success' && (
+                  {status === "sending"
+                    ? t("contact.form_sending")
+                    : status === "success"
+                      ? t("contact.form_sent")
+                      : t("contact.submit_btn")}
+                  {status !== "sending" && status !== "success" && (
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   )}
                 </Button>
               </form>
             </div>
-
           </div>
         </div>
-
       </div>
     </SectionWrapper>
   );

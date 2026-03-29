@@ -154,7 +154,7 @@ const HowItWorks = () => {
           <div id="drone-wrapper" className="absolute top-0 left-0 w-[90px] h-[90px] z-30 opacity-0 center origin-center">
             {/* Inner Floating Engine with totally naked transparent PNG representation */}
             <div className="drone-anim-layer w-full h-full relative group">
-              <img src="/d-2.png" alt="Drone Path Tracker" className="w-full h-full object-contain relative z-10 scale-110 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
+              <img loading="lazy" src="/d-2.webp" alt="Drone Path Tracker" className="w-full h-full object-contain relative z-10 scale-110 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
             </div>
           </div>
 
@@ -199,7 +199,7 @@ const HowItWorks = () => {
               {/* Dynamically Pinned Mobile Drone Tracker! Fixed 60x60px constraint */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[60px] h-[60px] z-30 pointer-events-none">
                 <div className="drone-anim-layer w-full h-full relative">
-                  <img src="/d-3.png" alt="Drone Scrubber" className="w-full h-full object-contain rotate-90 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
+                  <img loading="lazy" src="/d-3.webp" alt="Drone Scrubber" className="w-full h-full object-contain rotate-90 drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]" />
                 </div>
               </div>
             </div>

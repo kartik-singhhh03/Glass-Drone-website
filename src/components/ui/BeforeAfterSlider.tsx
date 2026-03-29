@@ -24,14 +24,14 @@ const BeforeAfterSlider = ({ image, className = '' }: BeforeAfterSliderProps) =>
       onTouchMove={handleMove}
     >
       {/* Before Image (Simulated dirty with CSS filters so we don't need a real separate image) */}
-      <img 
+      <img loading="lazy" 
         src={image} 
         alt="Before cleaning" 
         className="absolute inset-0 w-full h-full object-cover filter brightness-[0.8] contrast-[0.9] sepia-[0.3] grayscale-[0.2]" 
       />
       
       {/* After Image (Clean Image) */}
-      <img 
+      <img loading="lazy" 
         src={image} 
         alt="After cleaning" 
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" 

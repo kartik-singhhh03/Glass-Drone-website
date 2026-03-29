@@ -161,7 +161,7 @@ const Footer = () => {
               className="flex items-center gap-[8px] mb-10 group w-max"
             >
               <img
-                src="/logo1.png"
+                src="/logo1.webp"
                 alt="Glass Drone"
                 loading="lazy"
                 className="w-auto h-[56px] md:h-[72px] lg:h-[100px] object-contain scale-[1.4] md:scale-[1.90] origin-center md:origin-left group-hover:scale-[1.60] transition-transform duration-300"

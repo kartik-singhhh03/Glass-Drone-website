@@ -142,7 +142,7 @@ const Hero = () => {
         <div
           className="absolute top-0 left-0 w-[100%] md:w-[80%] lg:w-[65%] h-full opacity-35 mix-blend-luminosity"
           style={{
-            backgroundImage: "url('/hero_drone.png')",
+            backgroundImage: "url('/hero_drone.webp')",
             backgroundSize: "cover",
             backgroundPosition: "left center",
           }}
@@ -278,8 +278,8 @@ const Hero = () => {
             <div ref={droneWrapperRef} className="relative w-full px-2 lg:px-0">
               <img
                 ref={droneRef}
-                src="/d-2.png"
-                alt="Glass Cleaning Drone"
+                src="/d-2.webp"
+                alt={t("hero.drone_alt")}
                 className="w-full h-auto object-contain relative drop-shadow-2xl"
               />
             </div>

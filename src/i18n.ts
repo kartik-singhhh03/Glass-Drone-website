@@ -1,16 +1,18 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-import en from './locales/en.json';
-import et from './locales/et.json';
+import en from "./locales/en.json";
+import et from "./locales/et.json";
 
 const resources = {
   en: { translation: en },
-  et: { translation: et }
+  et: { translation: et },
 };
 
-const savedLang = localStorage.getItem('lang') || 'et';
+const pathname = window.location.pathname;
+const urlLang = pathname.startsWith("/en") ? "en" : null;
+const savedLang = urlLang || localStorage.getItem("lang") || "et";
 
 i18n
   .use(LanguageDetector)
@@ -18,20 +20,20 @@ i18n
   .init({
     resources,
     lng: savedLang,
-    fallbackLng: 'et',
+    fallbackLng: "et",
     returnEmptyString: false,
     interpolation: {
-      escapeValue: false 
-    }
+      escapeValue: false,
+    },
   });
 
-i18n.on('missingKey', (_lng, _ns, key) => {
+i18n.on("missingKey", (_lng, _ns, key) => {
   console.warn("Missing translation:", key);
 });
 
 // Update the html lang attribute immediately and on change
 document.documentElement.lang = i18n.language;
-i18n.on('languageChanged', (lng: string) => {
+i18n.on("languageChanged", (lng: string) => {
   document.documentElement.lang = lng;
 });
 

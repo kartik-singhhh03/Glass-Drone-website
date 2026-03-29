@@ -12,27 +12,27 @@ if (typeof window !== 'undefined') {
 const services = [
   {
     key: 'service01',
-    image: '/HIGH-RISE CLEANING.jpg',
+    image: '/HIGH-RISE CLEANING.webp',
     tag: 'Service 01',
   },
   {
     key: 'service02',
-    image: '/GLASS FAÇADE MAINTENANCE.png',
+    image: '/GLASS FAÇADE MAINTENANCE.webp',
     tag: 'Service 02',
   },
   {
     key: 'service03',
-    image: '/HARD-TO-REACH SURFACES.png',
+    image: '/HARD-TO-REACH SURFACES.webp',
     tag: 'Service 03',
   },
   {
     key: 'service04',
-    image: '/SCHEDULED MAINTENANCE.png',
+    image: '/SCHEDULED MAINTENANCE.webp',
     tag: 'Service 04',
   },
   {
     key: 'service05',
-    image: '/hero_drone.png',
+    image: '/hero_drone.webp',
     tag: 'Service 05',
   },
 ];
@@ -144,7 +144,7 @@ const Services = () => {
                       className="service-img w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                       onError={(e) => {
                         e.currentTarget.onerror = null;
-                        e.currentTarget.src = '/commercial.png';
+                        e.currentTarget.src = '/commercial.webp';
                       }}
                     />
                     {/* Overlay gradient */}

@@ -90,10 +90,10 @@ const TargetClients = () => {
       }}
     >
       <div className={`target-card relative w-full rounded-[24px] overflow-hidden bg-white cursor-crosshair group ${client.heightClass}`}>
-        <img 
+        <img loading="lazy" 
           src={client.image} 
           alt={t(`target.items.${client.key}.title`)}
-          onError={(e) => { e.currentTarget.src = "/commercial.png"; }}
+          onError={(e) => { e.currentTarget.src = "/commercial.webp"; }}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
         <div 

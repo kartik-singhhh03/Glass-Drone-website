@@ -79,8 +79,8 @@ const CaseStudies = () => {
             
             {/* Image column */}
             <div className="w-full lg:w-1/2 h-[300px] md:h-[420px] rounded-[1.5rem] overflow-hidden relative">
-              <img 
-                src="/commercial.png" 
+              <img loading="lazy" 
+                src="/commercial.webp" 
                 alt="First drone cleaning project — launching 2026" 
                 className="w-full h-full object-cover opacity-80"
               />
