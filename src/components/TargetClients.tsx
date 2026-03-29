@@ -6,7 +6,7 @@ const clients = [
   {
     title: 'Office Buildings',
     description: 'High-rise and corporate spaces cleaned efficiently with zero disruption.',
-    image: '/Office Buildings.png',
+    image: 'https://images.pexels.com/photos/18710790/pexels-photo-18710790.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[480px] h-[360px]',
     delay: 0,
     col: 1
@@ -14,7 +14,7 @@ const clients = [
   {
     title: 'Residential Complexes',
     description: 'Quiet and precise operation for premium residential environments.',
-    image: '/Residential Complexes.png',
+    image: 'https://images.pexels.com/photos/15021809/pexels-photo-15021809.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[340px] h-[360px]',
     delay: 0.3,
     col: 1
@@ -23,7 +23,7 @@ const clients = [
   {
     title: 'Hotels & Resorts',
     description: 'Elevate guest experiences with pristine glass and spotless facades.',
-    image: '/Hotels & Resorts.png',
+    image: 'https://images.pexels.com/photos/17619969/pexels-photo-17619969.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[340px] h-[360px]',
     delay: 0.1,
     col: 2
@@ -31,7 +31,7 @@ const clients = [
   {
     title: 'Industrial Facilities',
     description: 'Safely tackle enormous surfaces and complex engineering challenges.',
-    image: '/Industrial Facilities.png',
+    image: 'https://images.pexels.com/photos/2224898/pexels-photo-2224898.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[480px] h-[360px]',
     delay: 0.4,
     col: 2
@@ -40,7 +40,7 @@ const clients = [
   {
     title: 'Shopping Centers',
     description: 'Maintain crystal-clear storefronts ensuring brilliant retail visibility.',
-    image: '/Shopping Centers.png',
+    image: 'https://images.pexels.com/photos/16133567/pexels-photo-16133567.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[420px] h-[360px]',
     delay: 0.2,
     col: 3
@@ -48,7 +48,7 @@ const clients = [
   {
     title: 'Modern Glass Structures',
     description: 'Specialized soft-wash drone care for delicate architectural glass.',
-    image: '/Modern Glass Structures.png',
+    image: 'https://images.pexels.com/photos/5253207/pexels-photo-5253207.jpeg?auto=compress&cs=tinysrgb&w=1280',
     heightClass: 'md:h-[400px] h-[360px]',
     delay: 0.5,
     col: 3
@@ -95,7 +95,7 @@ const TargetClients = () => {
     >
       <div className={`target-card relative w-full rounded-[24px] overflow-hidden bg-white cursor-crosshair group ${client.heightClass}`}>
         <img 
-          src={encodeURI(client.image)} 
+          src={client.image} 
           alt={client.title}
           onError={(e) => { e.currentTarget.src = "/commercial.png"; }}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"

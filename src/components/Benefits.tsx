@@ -10,7 +10,7 @@ const benefits = [
   {
     title: 'Faster cleaning',
     description: 'Piloted drone operations accelerate project timelines significantly vs. traditional methods.',
-    image: '/drone-cleaning.png'
+    image: 'https://images.pexels.com/photos/2096578/pexels-photo-2096578.jpeg?auto=compress&cs=tinysrgb&w=1280'
   },
   {
     title: 'Increased safety',

@@ -19,6 +19,15 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+      },
+      animation: {
+        'ripple': 'ripple 2s linear infinite',
+      },
+      keyframes: {
+        ripple: {
+          '0%': { transform: 'scale(0.8)', opacity: '1' },
+          '100%': { transform: 'scale(2.4)', opacity: '0' },
+        }
       }
     },
   },

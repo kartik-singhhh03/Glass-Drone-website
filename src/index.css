@@ -25,3 +25,122 @@
 @utility subtle-shadow {
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
 }
+
+/* ─── Safety Section — scoped animated background ────────────────────────── */
+
+/* Orb A: top-right — slow drift */
+@keyframes safety-float-a {
+  0%   { transform: translateY(0px)  translateX(0px); }
+  33%  { transform: translateY(-18px) translateX(10px); }
+  66%  { transform: translateY(10px)  translateX(-8px); }
+  100% { transform: translateY(0px)  translateX(0px); }
+}
+
+/* Orb B: bottom-left — slightly different rhythm */
+@keyframes safety-float-b {
+  0%   { transform: translateY(0px)  translateX(0px); }
+  40%  { transform: translateY(16px)  translateX(-12px); }
+  75%  { transform: translateY(-10px) translateX(8px); }
+  100% { transform: translateY(0px)  translateX(0px); }
+}
+
+/* Orb C: center — very slow pulse-drift */
+@keyframes safety-float-c {
+  0%   { transform: translateY(0px) scale(1); }
+  50%  { transform: translateY(-14px) scale(1.04); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+/* Light sweep: slow horizontal pass */
+@keyframes safety-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.safety-section {
+  position: relative;
+  overflow: hidden;
+  background: #F7FAFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Dot-grid tech texture overlay */
+.safety-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 120, 206, 0.18) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gradient orb — top-right (#60A5FA brand-aligned) */
+.safety-orb-a {
+  position: absolute;
+  top: -12%;
+  right: -10%;
+  width: 58%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.07) 0%, transparent 68%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: safety-float-a 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Gradient orb — bottom-left (cyan #22D3EE → brand #00ACCE) */
+.safety-orb-b {
+  position: absolute;
+  bottom: -14%;
+  left: -10%;
+  width: 52%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(0, 172, 206, 0.07) 0%, transparent 68%);
+  border-radius: 50%;
+  filter: blur(68px);
+  pointer-events: none;
+  z-index: 0;
+  animation: safety-float-b 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Gradient orb — center (very faint inner focus) */
+.safety-orb-c {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: safety-float-c 15s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Light sweep band */
+.safety-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: safety-sweep 12s ease-in-out infinite;
+  will-change: transform;
+}
+
