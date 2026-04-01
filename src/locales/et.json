@@ -10,11 +10,11 @@
     "Get a Quote": "Küsi hinnapakkumist"
   },
   "hero": {
-    "title_part1": "Drooniga aknapesu ",
-    "title_highlight": "kõrghoonetele",
+    "title_part1": "Droonipõhine ",
+    "title_highlight": "akende ja fassaadide puhastus",
     "title_part2": " Eestis",
-    "subtitle": "Ohutum, kiirem ja kuluefektiivsem viis klaasfassaadide ja raskesti ligipääsetavate pindade puhastamiseks.",
-    "areas": "Teenindame elamu-, äri- ja valitsushooneid Eestis (sh Tallinnas), Baltikumis ja Skandinaavias.",
+    "subtitle": "Ohutum, kiirem ja kuluefektiivsem viis klaas- ja fassaadide puhastamiseks ilma tellingute ja tõstukiteta.",
+    "areas": "Teenindame elamu-, äri-, tööstus- ja valitsushooneid üle Eesti .",
     "get_quote": "Küsi hinnapakkumist",
     "watch_demo": "Vaata videot",
     "contact_us": "Võta ühendust",
@@ -116,7 +116,7 @@
       },
       "benefit05": {
         "title": "Skaleeritavad projektid",
-        "desc": "Ühtlane kvaliteet igas suuruses hoonetele Eestis, Baltikumis ja Skandinaavias."
+        "desc": "Ühtlane kvaliteet igas suuruses hoonetele Eestis."
       },
       "benefit06": {
         "title": "Keerulised struktuurid",
@@ -202,7 +202,7 @@
       },
       "factor02": {
         "title": "Pindala",
-        "desc": "Klaasfassaadi kogupindala määrab kogu lennuaja ja kasutatavate droonide arvu."
+        "desc": "Klaasfassaadi kogupindala määrab kogu lennuaja."
       },
       "factor03": {
         "title": "Juurdepääsetavus",
@@ -210,7 +210,7 @@
       },
       "factor04": {
         "title": "Määrdumus",
-        "desc": "Tugev atmosfääriline mustus võib nõuda spetsiaalseid pehmeid harju või mitut eeltöötluse pesutsüklit."
+        "desc": "Tugev atmosfääriline mustus võib nõuda spetsiaalseid aineid või mitut eeltöötluse pesutsüklit."
       },
       "factor05": {
         "title": "Sagedus",
@@ -223,7 +223,7 @@
     },
     "cta": {
       "title": "Oled valmis täpsete arvude jaoks?",
-      "desc": "Kaota ära oletamine. Kasutame satelliidipilte, et arvutada 90% teie hinnast juba enne meie esimest kõnet.",
+      "desc": "Kaota ära oletamine. Kasutame objekti andmeid ja kogemust, et anda täpne hinnang juba esimesel etapil.",
       "btn": "Saada hoone andmed kiireks pakkumiseks"
     }
   },
@@ -246,7 +246,7 @@
       },
       "faq04": {
         "q": "Kuidas droonipuhastuse süsteem töötab?",
-        "a": "Droon on varustatud survepesusüsteemiga ja töötab hoone ohutul kaugusel (tavaliselt 5 meetrit või rohkem). Veetoru jookseb maapinnalt droonini, tagades pideva voolu. Kasutame deioniseeritud vett, et tagada määrdumisvaba lõpptulemus ilma plekkideta."
+        "a": "Droon on varustatud survepesusüsteemiga ja töötab hoone ohutul kaugusel (tavaliselt 2-5 meetrit). Veetoru jookseb maapinnalt droonini, tagades pideva voolu. Kasutame deioniseeritud vett või spetsiaalset ainet, et tagada määrdumisvaba lõpptulemus ilma plekkideta."
       },
       "faq05": {
         "q": "Kas see sobib igat tüüpi klaasidele?",
@@ -292,14 +292,14 @@
   "contact": {
     "badge": "Oled valmis alustama?",
     "title": "Saa täpne hinnapakkumine",
-    "subtitle": "Täida allolev vorm oma objekti andmetega. Meie meeskond kaardistab teie hoone satelliidiandmete abil ja koostab kiiresti täpse eelarve.",
+    "subtitle": "Täida allolev vorm oma objekti andmetega. Meie meeskond vaatab üle teie hoone ja koostab kiiresti täpse eelarve.",
     "call_us": "Helista meile",
-    "available_time": "E-R, 9:00 - 18:00",
+    "available_time": "E-L, 8:00 - 18:00",
     "email_us": "Kirjuta meile",
     "instant_response": "Kiire vastus",
     "start_chat": "Alusta vestlust",
     "service_area": "Teeninduspiirkond",
-    "service_area_desc": "Eesti, Baltikum ja Skandinaavia",
+    "service_area_desc": "Eesti",
     "form_title": "Objekti andmed",
     "form_name": "Täisnimi",
     "form_name_placeholder": "Jaan Tamm",
