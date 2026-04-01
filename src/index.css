@@ -160,3 +160,52 @@
   min-height: 60px;
 }
 
+/* --- Estonian Layout Overrides (Safe & Non-Breaking) --- */
+
+.hero-title {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.2;
+}
+
+html[lang="et"] .hero-title {
+  font-size: clamp(26px, 5vw, 52px);
+}
+
+.hero-container {
+  height: auto;
+  min-height: unset;
+  overflow: visible;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+html[lang="et"] .nav-link {
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  html[lang="et"] .nav-link {
+    font-size: 13px;
+  }
+}
+
+.navbar {
+  flex-wrap: wrap;
+}
+
+button {
+  text-align: center;
+  line-height: 1.2;
+  padding: 12px 16px;
+}
+

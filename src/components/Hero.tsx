@@ -165,11 +165,11 @@ const Hero = () => {
       </div>
 
       {/* --- FOREGROUND CONTENT --- */}
-      <div className="relative z-10 max-w-[1280px] w-full mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-4 lg:gap-8 items-center lg:items-start min-h-[70vh] lg:min-h-[600px]">
+      <div className="hero-container relative z-10 max-w-[1280px] w-full mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-4 lg:gap-8 items-center lg:items-start min-h-[70vh] lg:min-h-[600px]">
         {/* Left Side: Text Content */}
         {/* Mobile: Order 2 (Below Drone). Tablet/Desktop: Order 1 */}
         <div className="md:col-span-6 lg:col-span-7 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1 relative z-20 w-full max-w-[700px] mx-auto lg:mx-0">
-          <h1 className="hero-text-element text-[34px] sm:text-[42px] md:text-[40px] lg:text-[60px] font-semibold tracking-tight text-slate-900 mb-5 leading-[1.12]">
+          <h1 className="hero-title hero-text-element text-[34px] sm:text-[42px] md:text-[40px] lg:text-[60px] font-semibold tracking-tight text-slate-900 mb-5 leading-[1.12]">
             {t("hero.title_part1")}
             <span className="text-blue-accent whitespace-nowrap">
               {t("hero.title_highlight")}

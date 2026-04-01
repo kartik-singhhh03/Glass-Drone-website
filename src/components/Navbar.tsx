@@ -54,12 +54,12 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden xl:flex items-center flex-wrap gap-3 xl:gap-6 justify-center max-w-[65%]">
+        <div className="navbar hidden xl:flex items-center flex-wrap gap-3 xl:gap-6 justify-center max-w-[65%]">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="font-medium text-[13px] xl:text-[14px] text-wrap break-words text-center text-slate-600 hover:text-blue-accent transition-colors duration-300"
+              className="nav-link font-medium text-[13px] xl:text-[14px] text-wrap break-words text-center text-slate-600 hover:text-blue-accent transition-colors duration-300"
             >
               {t(`nav.${link.name}`)}
             </a>
