@@ -90,6 +90,10 @@
       "client06": {
         "title": "Klaasist ehitised",
         "desc": "Spetsiaalne pehmepesu droonihooldus õrnale arhitektuuriklaasile."
+      },
+      "client07": {
+        "title": "Reklaamtahvlid ja Suured Ekraanid",
+        "desc": "Kiire ja ohutu puhastus suurtele reklaamtahvlitele ja ekraanidele ilma tõstukiteta."
       }
     }
   },

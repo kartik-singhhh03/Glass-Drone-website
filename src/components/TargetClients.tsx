@@ -1,53 +1,67 @@
-import { useState, useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import SectionHeading from './ui/SectionHeading';
+import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import SectionHeading from "./ui/SectionHeading";
 
 const clients = [
   // COL 1
   {
-    key: 'client01',
-    image: 'https://images.pexels.com/photos/18710790/pexels-photo-18710790.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    heightClass: 'md:h-[480px] h-[360px]',
+    key: "client01",
+    image:
+      "https://images.pexels.com/photos/18710790/pexels-photo-18710790.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    heightClass: "md:h-[480px] h-[360px]",
     delay: 0,
-    col: 1
+    col: 1,
   },
   {
-    key: 'client02',
-    image: 'https://images.pexels.com/photos/15021809/pexels-photo-15021809.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    heightClass: 'md:h-[340px] h-[360px]',
+    key: "client02",
+    image:
+      "https://images.pexels.com/photos/15021809/pexels-photo-15021809.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    heightClass: "md:h-[340px] h-[360px]",
     delay: 0.3,
-    col: 1
+    col: 1,
   },
   // COL 2
   {
-    key: 'client03',
-    image: 'https://images.pexels.com/photos/17619969/pexels-photo-17619969.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    heightClass: 'md:h-[340px] h-[360px]',
+    key: "client03",
+    image:
+      "https://images.pexels.com/photos/17619969/pexels-photo-17619969.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    heightClass: "md:h-[340px] h-[360px]",
     delay: 0.1,
-    col: 2
+    col: 2,
   },
   {
-    key: 'client04',
-    image: 'https://images.pexels.com/photos/2224898/pexels-photo-2224898.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    heightClass: 'md:h-[480px] h-[360px]',
+    key: "client04",
+    image:
+      "https://images.pexels.com/photos/2224898/pexels-photo-2224898.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    heightClass: "md:h-[480px] h-[360px]",
     delay: 0.4,
-    col: 2
+    col: 2,
   },
   // COL 3
   {
-    key: 'client05',
-    image: 'https://images.pexels.com/photos/16133567/pexels-photo-16133567.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    heightClass: 'md:h-[420px] h-[360px]',
+    key: "client05",
+    image:
+      "https://images.pexels.com/photos/16133567/pexels-photo-16133567.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    heightClass: "md:h-[420px] h-[360px]",
     delay: 0.2,
-    col: 3
+    col: 3,
   },
   {
-    key: 'client06',
-    image: 'https://images.pexels.com/photos/5253207/pexels-photo-5253207.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    heightClass: 'md:h-[400px] h-[360px]',
+    key: "client06",
+    image:
+      "https://images.pexels.com/photos/5253207/pexels-photo-5253207.jpeg?auto=compress&cs=tinysrgb&w=1280",
+    heightClass: "md:h-[400px] h-[360px]",
     delay: 0.5,
-    col: 3
-  }
+    col: 3,
+  },
+  {
+    key: "client07",
+    image: "/billboard_image.jpeg",
+    heightClass: "md:h-[480px] h-[420px]",
+    delay: 0.6,
+    col: 2,
+    imageClass: "object-top",
+  },
 ];
 
 const TargetClients = () => {
@@ -66,40 +80,50 @@ const TargetClients = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(container);
     return () => observer.disconnect();
   }, []);
 
-  const col1 = clients.filter(c => c.col === 1);
-  const col2 = clients.filter(c => c.col === 2);
-  const col3 = clients.filter(c => c.col === 3);
-  
+  const col1 = clients.filter((c) => c.col === 1);
+  const col2 = clients.filter((c) => c.col === 2);
+  const col3 = clients.filter((c) => c.col === 3);
+
   // Sorted for mobile single column
   const mobileClients = [...clients].sort((a, b) => a.delay - b.delay);
 
-  const renderCard = (client: typeof clients[0]) => (
-    <div 
+  const renderCard = (client: (typeof clients)[0]) => (
+    <div
       key={client.key}
       className="w-full"
       style={{
         opacity: 0,
-        animation: isVisible ? `fadeRise 0.8s ease forwards ${client.delay}s` : 'none',
+        animation: isVisible
+          ? `fadeRise 0.8s ease forwards ${client.delay}s`
+          : "none",
       }}
     >
-      <div className={`target-card relative w-full rounded-[24px] overflow-hidden bg-white cursor-crosshair group ${client.heightClass}`}>
-        <img loading="lazy" 
-          src={client.image} 
+      <div
+        className={`target-card relative w-full rounded-[24px] overflow-hidden bg-white cursor-crosshair group ${client.heightClass}`}
+      >
+        <img
+          loading="lazy"
+          src={client.image}
           alt={t(`target.items.${client.key}.title`)}
-          onError={(e) => { e.currentTarget.src = "/commercial.webp"; }}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          onError={(e) => {
+            e.currentTarget.src = "/commercial.webp";
+          }}
+          className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+            (client as any).imageClass || ""
+          }`}
         />
-        <div 
+        <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(255,255,255,0) 40%, rgba(255,255,255,0.85) 70%, rgba(255,255,255,1) 100%)'
+            background:
+              "linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,0.85) 65%, rgba(255,255,255,1) 100%)",
           }}
         />
         <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 pointer-events-none z-10">
@@ -115,17 +139,17 @@ const TargetClients = () => {
   );
 
   return (
-    <section 
-      id="clients" 
-      className="relative overflow-hidden py-24 sm:py-32" 
-      style={{ background: 'linear-gradient(to bottom, #F8F8FF, #EEF4FF)' }}
+    <section
+      id="clients"
+      className="relative overflow-hidden py-24 sm:py-32"
+      style={{ background: "linear-gradient(to bottom, #F8F8FF, #EEF4FF)" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div ref={containerRef}>
           <SectionHeading
-            badge={t('target.badge')}
-            title={t('target.title')}
-            subtitle={t('target.subtitle')}
+            badge={t("target.badge")}
+            title={t("target.title")}
+            subtitle={t("target.subtitle")}
           />
         </div>
 
