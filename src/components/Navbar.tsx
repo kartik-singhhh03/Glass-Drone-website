@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import Button from "./ui/Button";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +25,22 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#services" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Projects", href: "#case-studies" },
-    { name: "Safety", href: "#safety" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/#services" },
+    { name: "How It Works", href: "/#how-it-works" },
+    { name: "Projects", href: "/#case-studies" },
+    { name: "Safety", href: "/safety" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Contact", href: "/contact" },
   ];
+
+  const getLinkHref = (href: string) => {
+    // If on home page and clicking a hash link, return just the hash so Lenis smooth scrolls
+    if (location.pathname === "/" && href.startsWith("/#")) {
+      return href.replace("/", "");
+    }
+    return href;
+  };
 
   return (
     <nav
@@ -44,25 +54,25 @@ const Navbar = () => {
     >
       <div className="px-6 md:px-8 flex items-center justify-between w-full h-full">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-[8px] group">
+        <Link to="/" className="flex items-center gap-[8px] group">
           <img
             src="/logo1.webp"
             alt="Glass Drone"
             loading="eager"
             className="w-auto h-[48px] md:h-[72px] lg:h-[100px] object-contain scale-[1.4] md:scale-[1.70] origin-left group-hover:scale-[1.60] transition-transform duration-300"
           />
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="navbar hidden xl:flex items-center flex-wrap gap-3 xl:gap-6 justify-center max-w-[65%]">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={getLinkHref(link.href)}
               className="nav-link font-medium text-[13px] xl:text-[14px] text-wrap break-words text-center text-slate-600 hover:text-blue-accent transition-colors duration-300"
             >
               {t(`nav.${link.name}`)}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -83,7 +93,7 @@ const Navbar = () => {
             </button>
           </div>
           <Button
-            href="#contact"
+            href="/contact"
             variant="primary"
             className="px-6 py-2.5 text-sm"
           >
@@ -106,17 +116,17 @@ const Navbar = () => {
       >
         <div className="px-6 py-6 flex flex-col gap-2">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={getLinkHref(link.href)}
               className="font-medium text-lg text-slate-700 py-3 border-b border-slate-100/60 hover:text-blue-accent hover:pl-2 transition-all duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t(`nav.${link.name}`)}
-            </a>
+            </Link>
           ))}
           <Button
-            href="#contact"
+            href="/contact"
             variant="primary"
             className="w-full mt-6 py-4"
             onClick={() => setMobileMenuOpen(false)}

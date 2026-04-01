@@ -191,7 +191,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start items-center gap-4 w-full sm:w-auto mt-6 lg:mt-8 relative z-30">
             <div className="hero-btn-element w-full sm:w-auto">
               <Button
-                href="#quote"
+                href="/contact"
                 size="lg"
                 variant="primary"
                 className="w-full sm:w-auto px-6 py-3 md:px-5 lg:px-8 lg:py-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-accent/30"
@@ -238,7 +238,7 @@ const Hero = () => {
             </div>
             <div className="hero-btn-element hidden lg:block w-full sm:w-auto">
               <Button
-                href="#contact"
+                href="/contact"
                 size="lg"
                 variant="ghost"
                 className="w-full sm:w-auto px-8 py-3.5 transition-all duration-300 hover:-translate-y-1"
